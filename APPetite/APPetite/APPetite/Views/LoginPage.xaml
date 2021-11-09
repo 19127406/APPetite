@@ -10,8 +10,8 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="logo.png" />
-            <Frame BorderColor="LightGray" CornerRadius="10" HasShadow="True" Margin="-30"
+            <Image Source="logo.png"/>
+            <Frame BorderColor="LightGray" CornerRadius="10" HasShadow="True" Margin="-35"
                HeightRequest="430" WidthRequest="250"
                IsClippedToBounds="True"
                HorizontalOptions="Center" VerticalOptions="Center">

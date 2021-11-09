@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPetite.Views.AboutPage"
              xmlns:vm="clr-namespace:APPetite.ViewModels"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             Shell.NavBarIsVisible="False">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />

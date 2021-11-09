@@ -1,4 +1,7 @@
 ﻿using APPetite.ViewModels;
+using APPetite.Models;
+using Firebase.Database;
+using Firebase.Database.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +27,18 @@ namespace APPetite.Views
                 password = passwordEntry.Text;
 
 
+            // temp for register account later
+            FirebaseClient fc = new FirebaseClient("https://projectse-21-22-default-rtdb.asia-southeast1.firebasedatabase.app/");
+            var check = await fc
+                .Child("Account")
+                .PostAsync(new Account() { Username = username, Password = password });
+            //
+
+
+
+
+
+            await Navigation.PushAsync(new Home());
         }
 
         public async void Sign_up_clicked(object sender, EventArgs e)
