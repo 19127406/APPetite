@@ -18,7 +18,7 @@ namespace APPetite.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            //this.BindingContext = new LoginViewModel();
         }
 
         public async void Sign_in_clicked(object sender, EventArgs e)
@@ -28,17 +28,17 @@ namespace APPetite.Views
 
 
             // temp for register account later
-            FirebaseClient fc = new FirebaseClient("https://projectse-21-22-default-rtdb.asia-southeast1.firebasedatabase.app/");
-            var check = await fc
-                .Child("Account")
-                .PostAsync(new Account() { Username = username, Password = password });
+            //FirebaseClient fc = new FirebaseClient("https://projectse-21-22-default-rtdb.asia-southeast1.firebasedatabase.app/");
+            //var check = await fc
+            //    .Child("Account")
+            //    .PostAsync(new Account() { Username = username, Password = password });
             //
 
 
 
 
 
-            await Navigation.PushAsync(new Home());
+            await Navigation.PushAsync(new AboutUs());
         }
 
         public async void Sign_up_clicked(object sender, EventArgs e)

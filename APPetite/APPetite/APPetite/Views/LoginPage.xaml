@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPetite.Views.LoginPage"
-             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
              Shell.FlyoutBehavior="Disabled"
              >
     <ContentPage.Content>
