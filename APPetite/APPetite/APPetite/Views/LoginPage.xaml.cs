@@ -35,7 +35,7 @@ namespace APPetite.Views
             else
             {
                 var user = await FirebaseHelper.GetUser(username);
-                //firebase return null valuse if user data not found in database    
+
                 if (user != null)
                     if (username == user.Username && password == user.Password)
                     {
