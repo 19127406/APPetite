@@ -55,7 +55,7 @@ namespace APPetite.ViewModels
         }
 
         //Inser a user    
-        public static async Task<bool> AddUser(string username, string password)
+        public static async Task<bool> AddUser(string username, string email, string password)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace APPetite.ViewModels
 
                 await firebase
                 .Child("Account")
-                .PostAsync(new Account() { Username = username, Password = password });
+                .PostAsync(new Account() { Username = username, Email = email, Password = password });
                 return true;
             }
             catch (Exception e)

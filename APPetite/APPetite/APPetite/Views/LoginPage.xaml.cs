@@ -15,7 +15,6 @@ namespace APPetite.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public static FirebaseClient fc = new FirebaseClient("https://projectse-21-22-default-rtdb.asia-southeast1.firebasedatabase.app/");
         public LoginPage()
         {
             InitializeComponent();

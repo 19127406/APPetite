@@ -16,5 +16,10 @@ namespace APPetite.Models
             get;
             set;
         }
+        public string Email
+        {
+            get;
+            set;
+        }
     }
 }

@@ -10,9 +10,30 @@
                     BackgroundColor="Transparent" WidthRequest="35" CornerRadius="15"
                     Margin="0, 30, 320, 0"
                     Clicked="Go_back_clicked"/>
-            <Label Text="Sign Up" FontSize="35" TextColor="black" FontAttributes="Bold" FontFamily="Times New Roman" 
+            <Label Text="Sign Up" FontSize="45" TextColor="black" FontAttributes="Bold" 
                    HorizontalOptions="Center" VerticalOptions="Center"
                    Margin="0, 0, 0, 10"/>
+            <Label Text="Welcome to APPetite" FontSize="15" TextColor="black"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   Margin="0, 0, 0, 50"/>
+            <Entry x:Name="registerUsernameEntry" WidthRequest="300" Placeholder="Username" ClearButtonVisibility="WhileEditing"
+                   HorizontalOptions="Center" Margin="0,0,0,20"
+                   TextChanged="entryTextChanged"/>
+            <Entry x:Name="registerEmailEntry" WidthRequest="300" Placeholder="Email" ClearButtonVisibility="WhileEditing"
+                   HorizontalOptions="Center" Margin="0,0,0,20"
+                   TextChanged="entryTextChanged"/>
+            <Entry x:Name="registerPasswordEntry" WidthRequest="300" Placeholder="Password" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                   HorizontalOptions="Center" Margin="0,0,0,20"
+                   TextChanged="entryTextChanged"/>
+            <Entry x:Name="confirmPasswordEntry" WidthRequest="300" Placeholder="Confirm Password" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                   HorizontalOptions="Center" Margin="0,0,0,0"
+                   TextChanged="entryTextChanged"/>
+            <Label x:Name="confirmAlert" Text="Password confirmation does not match" FontSize="15" TextColor="Transparent"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+                   Margin="60, -10, 0, 30"/>
+            <Button x:Name="signUpButton" HorizontalOptions="Center" Text="Sign up" FontSize="20" TextColor="Black" TextTransform="None"
+                    WidthRequest="270" CornerRadius="100" Background="darkgray"
+                    Clicked="Sign_up_clicked" IsEnabled="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
