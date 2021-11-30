@@ -39,7 +39,7 @@
 
                     <Button HorizontalOptions="Center" Text="Forgot your password ?" TextColor="Black" TextTransform="None"
                     Background="transparent" WidthRequest="205"  
-                    Command="{Binding ForgotPasswordCommand}">
+                    Clicked="Forgot_password_clicked" Command="{Binding ForgotPasswordCommand}">
                     </Button>
 
                 </StackLayout>
