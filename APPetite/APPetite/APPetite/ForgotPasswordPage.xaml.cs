@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -40,7 +39,8 @@ namespace APPetite
 
         private void Reset_password_clicked(object sender, EventArgs e)
         {
-
+            Email email = new Email();
+            email.send_email(forgotEmailEntry.Text, "Reset password");
         }
     }
 }
