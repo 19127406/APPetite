@@ -9,6 +9,57 @@ using System.Threading.Tasks;
 
 namespace APPetite
 {
+    // Reference: https://www.c-sharpcorner.com/article/generating-random-number-and-string-in-C-Sharp/
+    public class RandomGenerator
+    {
+        private readonly Random rand = new Random();
+
+        public int RandomNumber()
+        {
+            return rand.Next(0, 9);
+        }
+
+        public string RandomString(int size, bool lowerCase = false)
+        {
+            var builder = new StringBuilder(size);
+            char offset = lowerCase ? 'a' : 'A';
+            const int lettersOffset = 26; // A...Z or a..z: length = 26  
+
+            for (var i = 0; i < size; i++)
+            {
+                var @char = (char)rand.Next(offset, offset + lettersOffset);
+                builder.Append(@char);
+            }
+
+            return lowerCase ? builder.ToString().ToLower() : builder.ToString();
+        }
+
+        public string GenerateRandom(int length = 8)
+        {
+            var code = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                int choose = rand.Next(1, 4);
+                if(choose == 1)
+                    code.Append(RandomNumber());
+                else if(choose == 2)
+                    code.Append(RandomString(1, true));
+                else
+                    code.Append(RandomString(1));
+            }
+
+            return code.ToString();
+        }
+    }
+
+    /*
+        // randomThing la chuoi da random
+        // Neu muon doi do dai thi them cho GenerateRandom
+        var generator = new RandomGenerator();
+        var randomThing = generator.GenerateRandom();
+     */
+
     public class Email
     {
         public void send_email(string emailAddress, string subject)
