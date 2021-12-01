@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using APPetite.ViewModels;
+using APPetite.Models;
 
 namespace APPetite
 {
@@ -95,6 +97,12 @@ namespace APPetite
                 email.send_email(forgotEmailEntry.Text, "Reset password");
                 await App.Current.MainPage.DisplayAlert("Check your email", "We've sent you a password reset email", "OK");
             }
+        }
+
+        public async void Update_password(string emailAddress, string new_password)
+        {
+            var user = await FirebaseHelper.GetUserByEmail(emailAddress);
+            var success = await FirebaseHelper.UpdateUser(user.Username, user.Email, new_password);
         }
     }
 }

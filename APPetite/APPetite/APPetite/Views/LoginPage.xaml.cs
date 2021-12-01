@@ -33,9 +33,10 @@ namespace APPetite.Views
             }
             else
             {
-                var user = await FirebaseHelper.GetUser(username);
+                var user = await FirebaseHelper.GetUserByUsername(username);
 
                 if (user != null)
+                {
                     if (username == user.Username && password == user.Password)
                     {
                         await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
@@ -43,11 +44,12 @@ namespace APPetite.Views
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Username and Password", "OK");
+                        await App.Current.MainPage.DisplayAlert("Login Failed", "Please enter correct Username and Password", "OK");
                     }
+                }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Login Fail", "User not found", "OK");
+                    await App.Current.MainPage.DisplayAlert("Login Failed", "User not found", "OK");
                 }
             }
         }

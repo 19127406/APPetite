@@ -25,7 +25,8 @@ namespace APPetite.ViewModels
                 new Account
                 {
                     Username = item.Object.Username,
-                    Password = item.Object.Password
+                    Password = item.Object.Password,
+                    Email = item.Object.Email
                 }).ToList();
                 return userlist;
             }
@@ -37,7 +38,7 @@ namespace APPetite.ViewModels
         }
 
         //Read     
-        public static async Task<Account> GetUser(string username)
+        public static async Task<Account> GetUserByUsername(string username)
         {
             try
             {
@@ -54,13 +55,28 @@ namespace APPetite.ViewModels
             }
         }
 
+        public static async Task<Account> GetUserByEmail(string email)
+        {
+            try
+            {
+                var allAccount = await GetAllUser();
+                await firebase
+                .Child("Account")
+                .OnceAsync<Account>();
+                return allAccount.Where(a => a.Email == email).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return null;
+            }
+        }
+
         //Inser a user    
         public static async Task<bool> AddUser(string username, string email, string password)
         {
             try
             {
-
-
                 await firebase
                 .Child("Account")
                 .PostAsync(new Account() { Username = username, Email = email, Password = password });
@@ -74,19 +90,17 @@ namespace APPetite.ViewModels
         }
 
         //Update        
-        public static async Task<bool> UpdateUser(string username, string password)
+        public static async Task<bool> UpdateUser(string username, string email, string password)
         {
             try
             {
-
-
                 var toUpdateUser = (await firebase
                 .Child("Account")
                 .OnceAsync<Account>()).Where(a => a.Object.Username == username).FirstOrDefault();
                 await firebase
                 .Child("Account")
                 .Child(toUpdateUser.Key)
-                .PutAsync(new Account() { Username = username, Password = password });
+                .PutAsync(new Account() { Username = username, Password = password, Email = email });
                 return true;
             }
             catch (Exception e)

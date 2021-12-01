@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using APPetite.ViewModels;
+using APPetite.Models;
 
 namespace APPetite
 {
@@ -72,7 +74,7 @@ namespace APPetite
             mail.Subject = subject;
 
             mail.IsBodyHtml = true;
-            string htmlString = html_reset_password();
+            string htmlString = html_reset_password(emailAddress);
 
             mail.Body = htmlString;
 
@@ -84,10 +86,14 @@ namespace APPetite
             SmtpServer.Send(mail);
         }
 
-        private string html_reset_password()
+        private string html_reset_password(string emailAddress)
         {
             var generator = new RandomGenerator();
             var randomThing = generator.GenerateRandom();
+
+            ForgotPasswordPage update = new ForgotPasswordPage();
+            update.Update_password(emailAddress, randomThing);
+
             string html = @"<!DOCTYPE html>
 <html>
 <head>
