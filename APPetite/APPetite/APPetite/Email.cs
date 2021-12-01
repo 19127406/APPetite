@@ -37,7 +37,7 @@ namespace APPetite
                             body{
                                 font-family: 'Montserrat', sans-serif;
                                 display: flex;
-                                flex-direction: column;
+                                flex-direction: row;
                                 justify-content: center;
                                 align-items: center;
                                 background-color: #f6f5f7;
@@ -81,7 +81,6 @@ namespace APPetite
                         </style>
                     </head>
                     <body>
-                        <img src=""./logo.png"" alt=""appetite-logo"">
                         <div class=""container"">
                             <div class=""inner-container"">
                                 <div class=""top-container"">
