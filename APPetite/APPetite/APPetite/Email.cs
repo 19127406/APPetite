@@ -155,7 +155,7 @@ namespace APPetite
         <table border=""0"" cellpadding=""0"" cellspacing=""0"" width=""100%"" style=""max-width: 600px;"">
           <tr>
             <td align=""center"" valign=""top"" style=""padding: 36px 24px;"">
-                <img src=""https://drive.google.com/uc?export=download&id=1LA9szQYuoKtUNyLyxPaLma8FlVIK_wG6"" style=""display: block; width: 350px; max-width: 512px; min-width: 48px;"">
+                <img src=""https://i.imgur.com/cGmvYbT.png"" alt=""Logo"" style=""display: block; width: 350px; max-width: 512px; min-width: 48px;"">
             </td>
           </tr>
         </table>
@@ -219,7 +219,7 @@ namespace APPetite
                     <table border=""0"" cellpadding=""0"" cellspacing=""0"">
                       <tr>
                         <td align=""center"" bgcolor=""#1a82e2"" style=""border-radius: 6px;"">
-                          <a href=""https://sendgrid.com"" target=""_blank"" style=""display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;"">Do Something Sweet</a>
+                          <a target=""_blank"" style=""display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;"">Do Something Sweet</a>
                         </td>
                       </tr>
                     </table>
