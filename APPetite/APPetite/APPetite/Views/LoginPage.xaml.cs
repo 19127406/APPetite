@@ -43,7 +43,7 @@ namespace APPetite.Views
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Email and Password", "OK");
+                        await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Username and Password", "OK");
                     }
                 else
                 {

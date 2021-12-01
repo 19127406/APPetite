@@ -18,33 +18,6 @@ namespace APPetite
             InitializeComponent();
         }
 
-        private async void Go_back_clicked(object sender, EventArgs e)
-        {
-            await Application.Current.MainPage.Navigation.PopAsync();
-        }
-
-        private void checkToEnable()
-        {
-            ResetPasswordButton.IsEnabled = false;
-            ResetPasswordButton.Background = Brush.DarkGray;
-            if (!string.IsNullOrEmpty(forgotEmailEntry.Text))
-            {
-                ResetPasswordButton.IsEnabled = true;
-                ResetPasswordButton.Background = Brush.LightGray;
-            }
-        }
-
-        void entryTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {
-            checkToEnable();
-        }
-
-        private void Reset_password_clicked(object sender, EventArgs e)
-        {
-            Email email = new Email();
-            email.send_email(forgotEmailEntry.Text, "Reset password");
-        }
-
         public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -86,6 +59,41 @@ namespace APPetite
             catch (RegexMatchTimeoutException)
             {
                 return false;
+            }
+        }
+
+        private async void Go_back_clicked(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        private void checkToEnable()
+        {
+            ResetPasswordButton.IsEnabled = false;
+            ResetPasswordButton.Background = Brush.DarkGray;
+            if (!string.IsNullOrEmpty(forgotEmailEntry.Text))
+            {
+                ResetPasswordButton.IsEnabled = true;
+                ResetPasswordButton.Background = Brush.LightGray;
+            }
+        }
+
+        void entryTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            checkToEnable();
+        }
+
+        private async void Reset_password_clicked(object sender, EventArgs e)
+        {
+            Email email = new Email();
+            if (!IsValidEmail(forgotEmailEntry.Text))
+            {
+                await App.Current.MainPage.DisplayAlert("Invalid Email Address", "", "OK");
+            }
+            else
+            {
+                email.send_email(forgotEmailEntry.Text, "Reset password");
+                await App.Current.MainPage.DisplayAlert("Check your email", "We've sent you a password reset email", "OK");
             }
         }
     }
