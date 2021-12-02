@@ -1,12 +1,192 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Home">
+             x:Class="APPetite.Home"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame HasShadow="True" BackgroundColor="Transparent" 
+                       Padding="0">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <ImageButton Grid.Column="0" 
+                                     Source="baseline_notifications_black_24.png"
+                                     BackgroundColor="Transparent"
+                                     WidthRequest="25"
+                                     Margin="20,0"/>
+                        <Image Grid.Column="1" 
+                               Source="logo.png" 
+                               WidthRequest="175" 
+                               HeightRequest="60"/>
+                        <ImageButton Grid.Column="2" 
+                                     Source="baseline_search_black_24.png"
+                                     BackgroundColor="Transparent"
+                                     WidthRequest="25"
+                                     Margin="20,0"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Row="1" HasShadow="False" 
+                       Padding="0" 
+                       BackgroundColor="Transparent"
+                       Margin="0,10,0,0">
+                    <StackLayout>
+                        <Label Text="Món ngon&#10;trong ngày" 
+                               TextColor="{StaticResource Secondary}"
+                               Margin="25,0"
+                               FontSize="24"/>
+                        
+                        <!--<CollectionView ItemsLayout="HorizontalList">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Image Source="istockphoto_1.png"/>
+                                        <Label Text="Food 1"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>-->
+
+                        <Grid ColumnDefinitions="Auto, Auto, Auto" Padding="10,10,10,5">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Padding="5">
+                                <StackLayout>
+                                    <Image Source="istockphoto_1.png" 
+                                           WidthRequest="120" 
+                                           HeightRequest="150" 
+                                           Aspect="AspectFill"/>
+                                    <Label Text="Food 1" FontSize="16"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Column="1" HasShadow="True" 
+                                   BackgroundColor="Transparent"
+                                   Padding="5">
+                                <StackLayout>
+                                    <Image Source="istockphoto_1.png" 
+                                           WidthRequest="120" 
+                                           HeightRequest="150" 
+                                           Aspect="AspectFill"/>
+                                    <Label Text="Food 2" FontSize="16"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Column="2" HasShadow="True" 
+                                   BackgroundColor="Transparent"
+                                   Padding="5">
+                                <StackLayout>
+                                    <Image Source="istockphoto_1.png" 
+                                           WidthRequest="120" 
+                                           HeightRequest="150" 
+                                           Aspect="AspectFill"/>
+                                    <Label Text="Food 3" FontSize="16"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2" HasShadow="False" 
+                       Padding="0" 
+                       BackgroundColor="Transparent"
+                       Margin="0,3,0,0">
+                    <StackLayout>
+                        <Label Text="Nổi bật" TextColor="Black"
+                               Margin="25,0"
+                               FontSize="18"/>
+                        <!--<Grid ColumnDefinitions="Auto,Auto,Auto" Padding="10,0">
+                            <Image Source="istockphoto_1.png"
+                                   WidthRequest="150"
+                                   HeightRequest="100"
+                                   Aspect="AspectFill"
+                                   Margin="5,10"/>
+                            <Image Grid.Column="1" Source="istockphoto_1.png"
+                                   WidthRequest="150"
+                                   HeightRequest="100"
+                                   Aspect="AspectFill"
+                                   Margin="5,10"/>
+                            <Image Grid.Column="2" Source="istockphoto_1.png"
+                                   WidthRequest="150"
+                                   HeightRequest="100"
+                                   Aspect="AspectFill"
+                                   Margin="5,10"/>
+                        </Grid>-->
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="3" HasShadow="False" 
+                       Padding="0" 
+                       BackgroundColor="Transparent"
+                       Margin="0,5,0,0">
+                    <StackLayout>
+                        <Label Text="Mới nhất" TextColor="Black"
+                               Margin="25,0"
+                               FontSize="18"/>
+                        <Frame Margin="15,10"
+                               Padding="0">
+                            <StackLayout>
+                                <Image Source="istockphoto_1.png"
+                                       WidthRequest="200"
+                                       HeightRequest="130"
+                                       Aspect="AspectFill"/>
+                                <Frame HasShadow="False" Padding="12">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" 
+                                               Text="category"/>
+                                        <Label Grid.Row="1" Grid.Column="0" 
+                                               Text="Food 1"/>
+                                        <StackLayout Grid.Column="1" Grid.RowSpan="2" 
+                                                     Orientation="Horizontal"
+                                                     HorizontalOptions="EndAndExpand"
+                                                     Padding="0">
+                                            <Image Source="icon_about.png"/>
+                                            <Label Text="100"
+                                                   VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <Grid Grid.Row="2" Grid.ColumnSpan="2" 
+                                              ColumnDefinitions="*,*,*">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="icon_about.png"/>
+                                                <Label Text="ok" 
+                                                       VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                <Image Source="icon_about.png"/>
+                                                <Label Text="ok"
+                                                       VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Orientation="Horizontal">
+                                                <Image Source="icon_about.png"/>
+                                                <Label Text="ok"
+                                                       VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+                
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
