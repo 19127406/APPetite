@@ -14,30 +14,29 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource BackgroundPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BackgroundPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Black"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Primary}"/>
             </Style>
+
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
-            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
 
-
-    <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
-       <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
-    </ShellItem>
-
-
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <Tab Title="Home" Icon="outline_home_black_24.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
+        </Tab>
+
+        <Tab Title="Category" Icon="outline_restaurant_black_24.png">
+            <ShellContent ContentTemplate="{DataTemplate local:CategoryPage}"/>
+        </Tab>
     </TabBar>
 
     <!--
