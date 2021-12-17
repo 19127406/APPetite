@@ -74,8 +74,17 @@ namespace APPetite
             mail.Subject = subject;
 
             mail.IsBodyHtml = true;
-            string htmlString = html_reset_password(emailAddress);
+            string htmlString = string.Empty;
 
+            if (subject == "Reset password")
+            {
+                htmlString = html_reset_password(emailAddress);
+            }
+            else
+            {
+
+            }
+            
             mail.Body = htmlString;
 
             SmtpServer.Port = 587;
