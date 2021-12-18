@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPetite.Views.CategoryPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Transparent"
+                   Margin="0,0,0,20">
+                <Label Text="Bạn muốn khám phá thêm?"
+                       FontFamily="Montserrat-SemiBold"
+                       FontSize="23"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="{StaticResource Secondary}"/>
+            </Frame>
+
+            <StackLayout>
+                <Button Text="salad"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="món chiên"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="món xào"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="món chay"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="món hầm"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="bánh ngọt"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="món nướng"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+                <Button Text="sinh tố"
+                        FontFamily="Montserrat-SemiBold"
+                        TextColor="#4a4a4a"
+                        CornerRadius="5"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="330"
+                        Margin="0,0,0,5"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

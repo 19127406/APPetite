@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace APPetite.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class HomePage : ContentPage
     {
-        public LoginPage()
+        public HomePage()
         {
             InitializeComponent();
         }

@@ -1,7 +1,4 @@
-﻿using APPetite.ViewModels;
-using APPetite.Views;
-using System;
-using System.Collections.Generic;
+﻿using APPetite.Views;
 using Xamarin.Forms;
 
 namespace APPetite
@@ -11,8 +8,11 @@ namespace APPetite
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(CategoryPage), typeof(CategoryPage));
+            Routing.RegisterRoute(nameof(MyRecipePage), typeof(MyRecipePage));
+            Routing.RegisterRoute(nameof(MenuPage), typeof(MenuPage));
         }
 
     }

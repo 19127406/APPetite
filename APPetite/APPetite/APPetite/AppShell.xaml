@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
        xmlns:local="clr-namespace:APPetite.Views"
        Title="APPetite"
        x:Class="APPetite.AppShell">
@@ -30,22 +33,21 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="Home" Icon="outline_home_black_24.png">
+        <Tab Title="Home" Icon="outline_home_black_24.png" Route="HomePage">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
         </Tab>
 
-        <Tab Title="Category" Icon="outline_restaurant_black_24.png">
+        <Tab Title="Category" Icon="outline_restaurant_black_24.png" Route="CategoryPage">
             <ShellContent ContentTemplate="{DataTemplate local:CategoryPage}"/>
         </Tab>
-    </TabBar>
 
-    <!--
-        If you would like to navigate to this content you can do so by calling
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
-    </TabBar>
+        <Tab Title="My Recipes" Icon="outline_perm_identity_black_24.png" Route="MyRecipePage">
+            <ShellContent ContentTemplate="{DataTemplate local:MyRecipePage}"/>
+        </Tab>
 
+        <Tab Title="Menu" Icon="outline_menu_black_24.png" Route="MenuPage">
+            <ShellContent ContentTemplate="{DataTemplate local:MenuPage}"/>
+        </Tab>
+    </TabBar>
 
 </Shell>
