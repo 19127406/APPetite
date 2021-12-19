@@ -58,14 +58,14 @@
                                             <Frame Padding="0"
                                                    CornerRadius="10"
                                                    IsClippedToBounds="True">
-                                                <Image Source="{Binding }" 
+                                                <Image Source="{Binding imageSource}" 
                                                        WidthRequest="147" 
                                                        HeightRequest="177" 
                                                        Aspect="AspectFill"/>
                                             </Frame>
                                             <Frame Padding="10,0,5,10" BackgroundColor="Transparent"
                                                    Margin="0">
-                                                <Label Text="{Binding }" FontSize="16"
+                                                <Label Text="{Binding name}" FontSize="16"
                                                        TextColor="Black"
                                                        VerticalOptions="CenterAndExpand"
                                                        FontFamily="Montserrat-Regular"/>
