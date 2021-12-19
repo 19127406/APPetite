@@ -166,14 +166,28 @@
             <Frame BackgroundColor="Transparent"
                    HasShadow="False"
                    Padding="20,0">
-                <Button Text="About us"
+                <StackLayout>
+                    <Button Text="About us"
                         FontFamily="Montserrat-SemiBold"
                         TextTransform="None"
                         BackgroundColor="White"
                         CornerRadius="5"
                         HeightRequest="45"
                         Padding="0,0,250,0"/>
-            </Frame>
+                
+                    <Button Text="Log out"
+                            FontFamily="Montserrat-SemiBold"
+                            TextTransform="None"
+                            BackgroundColor="Transparent"
+                            CornerRadius="5"
+                            HeightRequest="45"
+                            Padding="0,0,255,0"
+                            TextColor="{StaticResource Primary}"
+                            BorderColor="{StaticResource Primary}"
+                            BorderWidth=".5"/>
+
+                </StackLayout>
+        </Frame>
 
         </StackLayout>
 
