@@ -19,6 +19,7 @@ namespace APPetite
             Routing.RegisterRoute(nameof(CategoryPage), typeof(CategoryPage));
             Routing.RegisterRoute(nameof(MyRecipePage), typeof(MyRecipePage));
             Routing.RegisterRoute(nameof(MenuPage), typeof(MenuPage));
+            Routing.RegisterRoute(nameof(AboutUsPage), typeof(AboutUsPage));
         }
 
     }
