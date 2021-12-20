@@ -16,5 +16,15 @@ namespace APPetite.Views
         {
             InitializeComponent();
         }
+
+        private async void OpenLoginPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(OpenPage)}/{nameof(LoginPage)}");
+        }
+
+        private async void OpenRegisterPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(OpenPage)}/{nameof(RegisterPage)}");
+        }
     }
 }

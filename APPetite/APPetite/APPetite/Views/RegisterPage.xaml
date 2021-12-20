@@ -1,12 +1,116 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.RegisterPage">
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.RegisterPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto,Auto,*">
+
+            <Frame HasShadow="False"
+                   BackgroundColor="Transparent">
+                <ImageButton Source="chevron_left.png"
+                             HorizontalOptions="Start"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="0,0,0,20"
+                   Margin="0,5,0,10">
+                <StackLayout>
+                    <Label Text="Đăng Ký"
+                           FontSize="44"
+                           FontFamily="Montserrat-SemiBold"
+                           TextColor="{StaticResource Primary}"
+                           HorizontalOptions="Center"/>
+                    
+                    <Label Text="Chào mừng tới APPetite"
+                           FontFamily="Montserrat-Regular"
+                           TextColor="{StaticResource Primary}"
+                           HorizontalOptions="Center"/>
+                    
+                </StackLayout>
+
+            </Frame>
+
+            <Frame Grid.Row="2"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="20">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="username_register"
+                                                  Placeholder="Username"
+                                                  HeightRequest="45"
+                                                  FontSize="16"
+                                                  FontFamily="Montserrat-Regular"
+                                                  ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="email_register"
+                                              Placeholder="Email"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="password_register"
+                                              IsPassword="True"
+                                              Placeholder="Mật khẩu"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="password_again"
+                                              IsPassword="True"
+                                              Placeholder="Nhập lại mật khẩu"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="0,10"
+                           Margin="0,25,0,0">
+                        <Button Text="tạo tài khoản"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"/>
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

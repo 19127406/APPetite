@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.ForgetPassEmail">
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.ForgetPassEmail"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto,*">
+
+            <Frame HasShadow="False"
+                   BackgroundColor="Transparent">
+                <ImageButton Source="chevron_left.png"
+                             HorizontalOptions="Start"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   HasShadow="False"
+                   BackgroundColor="Transparent">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent">
+                        <Label Text="Nhập Email của bạn"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="email_forgetpass"
+                                              Placeholder="Email"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

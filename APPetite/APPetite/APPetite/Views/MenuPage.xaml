@@ -10,13 +10,13 @@
                    HasShadow="False"
                    Padding="20">
                 <Grid ColumnDefinitions="Auto, *"
-                      Padding="10,25,10,0">
+                      Padding="10,20,10,0">
                     <Frame Padding="0"
                            CornerRadius="100"
                            IsClippedToBounds="True">
                         <Image Source="istockphoto_1.png" 
-                               WidthRequest="85" 
-                               HeightRequest="85" 
+                               WidthRequest="75" 
+                               HeightRequest="75" 
                                Aspect="AspectFill"/>
                     </Frame>
 
@@ -124,7 +124,7 @@
 
             <Frame BackgroundColor="Transparent"
                    HasShadow="False"
-                   Padding="20,10,20,5">
+                   Padding="20,5,20,0">
                 <StackLayout>
                     <Label Text="Settings"
                               FontFamily="Montserrat-SemiBold"
@@ -132,27 +132,20 @@
                               Margin="10,0,0,5"
                               FontSize="18"/>
                     <StackLayout>
-                        <Button Text="Option 1"
+                        <Button Text="Account"
                                 FontFamily="Montserrat-SemiBold"
                                 TextTransform="None"
                                 BackgroundColor="White"
                                 CornerRadius="5"
                                 HeightRequest="45"
                                 Padding="0,0,250,0"/>
-                        <Button Text="Option 2"
+                        <Button Text="Application"
                                 FontFamily="Montserrat-SemiBold"
                                 TextTransform="None"
                                 BackgroundColor="White"
                                 CornerRadius="5"
                                 HeightRequest="45"
-                                Padding="0,0,250,0"/>
-                        <Button Text="Option 3"
-                                FontFamily="Montserrat-SemiBold"
-                                TextTransform="None"
-                                BackgroundColor="White"
-                                CornerRadius="5"
-                                HeightRequest="45"
-                                Padding="0,0,250,0"/>
+                                Padding="0,0,230,0"/>
 
                     </StackLayout>
                 </StackLayout>
@@ -178,12 +171,10 @@
                     <Button Text="Log out"
                             FontFamily="Montserrat-SemiBold"
                             TextTransform="None"
-                            BackgroundColor="Transparent"
+                            BackgroundColor="{StaticResource Primary}"
                             CornerRadius="5"
                             HeightRequest="45"
-                            Padding="0,0,255,0"
-                            TextColor="{StaticResource Primary}"
-                            BorderColor="{StaticResource Primary}"
+                            TextColor="White"
                             BorderWidth=".5"/>
 
                 </StackLayout>

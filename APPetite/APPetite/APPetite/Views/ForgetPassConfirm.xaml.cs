@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace APPetite.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChangePassPage : ContentPage
+    public partial class ForgetPassConfirm : ContentPage
     {
-        public ChangePassPage()
+        public ForgetPassConfirm()
         {
             InitializeComponent();
         }

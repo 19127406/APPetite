@@ -1,12 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.LoginPage">
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto,*,2*">
+            <Frame HasShadow="False"
+                   BackgroundColor="Transparent">
+                <ImageButton Source="chevron_left.png"
+                             HorizontalOptions="Start"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="0,10">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Đăng Nhập"
+                           HorizontalOptions="CenterAndExpand"
+                           FontSize="44"
+                           FontFamily="Montserrat-SemiBold"
+                           TextColor="{StaticResource Primary}"/>
+                    
+                    <Label Text="Thật tuyệt khi gặp lại bạn"
+                           HorizontalOptions="CenterAndExpand"
+                           FontFamily="Montserrat-Regular"
+                           TextColor="{StaticResource Primary}"/>
+                    
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="2"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="20"
+                   VerticalOptions="Center">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="username_login"
+                                              Placeholder="Username hoặc Email"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+                    
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           CornerRadius="15">
+                        <controls:CustomEntry x:Name="password_login"
+                                              Placeholder="Mật khẩu"
+                                              IsPassword="True"
+                                              HeightRequest="45"
+                                              FontSize="16"
+                                              FontFamily="Montserrat-Regular"
+                                              ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="0"
+                           Margin="0,25">
+                        <Button Text="tiến vào APP"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"/>
+                    </Frame>
+
+                    <Label Text="Quên mật khẩu?"
+                           HorizontalOptions="Center"
+                           FontSize="16"
+                           FontFamily="Montserrat-Medium"
+                           TextColor="{StaticResource Primary}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenForgetPassPage"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </StackLayout>
+            </Frame>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -32,6 +32,10 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <ShellItem Route="OpenPage">
+        <ShellContent ContentTemplate="{DataTemplate local:OpenPage}"/>
+    </ShellItem>
+
     <TabBar>
         <Tab Title="Home" Icon="outline_home_black_24.png" Route="HomePage">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>

@@ -1,12 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.OpenPage">
+             x:Class="APPetite.Views.OpenPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="*, *">
+            <Frame BackgroundColor="Transparent">
+                <Image Source="logo.png"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   BackgroundColor="Transparent"
+                   Padding="20"
+                   VerticalOptions="Center">
+                <StackLayout Padding="20">
+                    <Button Text="đăng nhập" Clicked="OpenLoginPage"
+                            CornerRadius="100"
+                            FontSize="16"
+                            FontFamily="Montserrat-Regular"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource Primary}"/>
+                    <Label Text="Mới tải APP?"
+                           HorizontalOptions="CenterAndExpand"
+                           Margin="0,25"
+                           FontSize="16"
+                           FontFamily="Montserrat-Regular"
+                           TextColor="Black"/>
+                    <Button Text="đăng ký" Clicked="OpenRegisterPage"
+                            CornerRadius="100"
+                            FontSize="16"
+                            FontFamily="Montserrat-Regular"
+                            TextColor="{StaticResource Primary}"
+                            BorderColor="{StaticResource Primary}"
+                            BorderWidth="1"
+                            BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

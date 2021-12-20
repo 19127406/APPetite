@@ -12,6 +12,8 @@
             <Color x:Key="PrimaryDark">#002095</Color>
             <Color x:Key="RecipeDisplay">#f3efef</Color>
             <Color x:Key="BackgroundPrimary">#f7f7f7</Color>
+            <Color x:Key="EntryColor">#faf8f8</Color>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
