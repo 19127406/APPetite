@@ -38,21 +38,23 @@
                                               HeightRequest="45"
                                               FontSize="16"
                                               FontFamily="Montserrat-Regular"
-                                              ClearButtonVisibility="WhileEditing"/>
+                                              ClearButtonVisibility="WhileEditing"
+                                              TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
                            BackgroundColor="Transparent"
                            Padding="0"
                            Margin="0,40">
-                        <Button Text="tiếp tục" Clicked="SendConfirmEmail"
+                        <Button x:Name="ContinueButton" Text="tiếp tục" Clicked="SendConfirmEmail"
                                 HeightRequest="45"
                                 WidthRequest="250"
                                 HorizontalOptions="Center"
                                 CornerRadius="100"
                                 FontFamily="Montserrat-Regular"
                                 TextColor="White"
-                                BackgroundColor="{StaticResource Primary}"/>
+                                BackgroundColor="{StaticResource Primary}"
+                                IsEnabled="False"/>
                     </Frame>
                 </StackLayout>
             </Frame>

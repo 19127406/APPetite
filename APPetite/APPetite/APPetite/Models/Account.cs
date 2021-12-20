@@ -26,15 +26,5 @@ namespace APPetite.Models
             get;
             set;
         }
-        public string LastLoginAccountInfo
-        {
-            get;
-            set;
-        }
-        public bool LastLoginAccountStatus
-        {
-            get;
-            set;
-        }
     }
 }

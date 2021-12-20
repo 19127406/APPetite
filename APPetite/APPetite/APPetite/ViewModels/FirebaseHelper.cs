@@ -26,7 +26,8 @@ namespace APPetite.ViewModels
                 {
                     Username = item.Object.Username,
                     Password = item.Object.Password,
-                    Email = item.Object.Email
+                    Email = item.Object.Email,
+                    BackupPass = item.Object.BackupPass
                 }).ToList();
                 return userlist;
             }
@@ -79,7 +80,12 @@ namespace APPetite.ViewModels
             {
                 await firebase
                 .Child("Account")
-                .PostAsync(new Account() { Username = username, Email = email, Password = password });
+                .PostAsync(new Account() { 
+                    Username = username, 
+                    Email = email, 
+                    Password = password,
+                    BackupPass = ""
+                });
                 return true;
             }
             catch (Exception e)
@@ -90,7 +96,7 @@ namespace APPetite.ViewModels
         }
 
         //Update        
-        public static async Task<bool> UpdateUser(string username, string email, string password)
+        public static async Task<bool> UpdateUser(string username, string email, string password, string backupPass)
         {
             try
             {
@@ -100,7 +106,12 @@ namespace APPetite.ViewModels
                 await firebase
                 .Child("Account")
                 .Child(toUpdateUser.Key)
-                .PutAsync(new Account() { Username = username, Password = password, Email = email });
+                .PutAsync(new Account() { 
+                    Username = username, 
+                    Password = password, 
+                    Email = email,
+                    BackupPass = backupPass
+                });
                 return true;
             }
             catch (Exception e)
