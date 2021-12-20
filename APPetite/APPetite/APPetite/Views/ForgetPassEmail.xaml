@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto,*">
+        <Grid RowDefinitions="Auto,*,2*">
 
             <Frame HasShadow="False"
                    BackgroundColor="Transparent">
@@ -16,13 +16,19 @@
 
             <Frame Grid.Row="1"
                    HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="10,20">
+                <Label Text="Nhập Email của bạn"
+                       HorizontalOptions="Center"
+                       FontSize="26"
+                       FontFamily="Montserrat-SemiBold"
+                       TextColor="{StaticResource Primary}"/>
+            </Frame>
+
+            <Frame Grid.Row="2"
+                   HasShadow="False"
                    BackgroundColor="Transparent">
                 <StackLayout>
-                    <Frame HasShadow="False"
-                           BackgroundColor="Transparent">
-                        <Label Text="Nhập Email của bạn"/>
-                    </Frame>
-
                     <Frame HasShadow="False"
                            BackgroundColor="{StaticResource EntryColor}"
                            Padding="25,0"
@@ -35,6 +41,19 @@
                                               ClearButtonVisibility="WhileEditing"/>
                     </Frame>
 
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="0"
+                           Margin="0,40">
+                        <Button Text="tiếp tục" Clicked="SendConfirmEmail"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"/>
+                    </Frame>
                 </StackLayout>
             </Frame>
 

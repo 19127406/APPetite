@@ -68,7 +68,7 @@
                            BackgroundColor="Transparent"
                            Padding="0"
                            Margin="0,25">
-                        <Button Text="tiến vào APP"
+                        <Button Text="tiến vào APP" Clicked="LoginApp"
                                 HeightRequest="45"
                                 WidthRequest="250"
                                 HorizontalOptions="Center"

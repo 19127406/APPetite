@@ -21,5 +21,10 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync($"/{nameof(ForgetPassEmail)}");
         }
+
+        private async void LoginApp(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
     }
 }

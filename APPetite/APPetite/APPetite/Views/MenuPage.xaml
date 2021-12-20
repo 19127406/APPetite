@@ -168,7 +168,7 @@
                         HeightRequest="45"
                         Padding="0,0,250,0"/>
                 
-                    <Button Text="Log out"
+                    <Button Text="Log out" Clicked="LogoutApp"
                             FontFamily="Montserrat-SemiBold"
                             TextTransform="None"
                             BackgroundColor="{StaticResource Primary}"

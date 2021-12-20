@@ -5,10 +5,54 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Forget pass confirm!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto,Auto,*">
+
+            <Frame HasShadow="False"
+                   BackgroundColor="Transparent">
+                <ImageButton Source="chevron_left.png"
+                             HorizontalOptions="Start"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="20"
+                   Margin="5,15">
+                <StackLayout Spacing="10">
+                    <Label Text="Một mật khẩu ngẫu nhiên vừa được gửi đến Email của bạn"
+                           HorizontalOptions="Center"
+                           FontSize="22"
+                           FontFamily="Montserrat-SemiBold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource Primary}"/>
+                    
+                    <Label Text="Hãy thay đổi mật khẩu ngay khi vừa đăng nhập"
+                           HorizontalOptions="Center"
+                           FontFamily="Montserrat-Medium"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource Primary}"/>
+                    
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="2"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   Padding="0"
+                   VerticalOptions="Center">
+                <Frame HasShadow="False"
+                           BackgroundColor="Transparent">
+                        <Button Text="hoàn tất" Clicked="BackToOpenPage"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"/>
+                    </Frame>
+            </Frame>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

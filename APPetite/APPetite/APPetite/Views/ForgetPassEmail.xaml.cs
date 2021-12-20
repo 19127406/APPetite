@@ -16,5 +16,10 @@ namespace APPetite.Views
         {
             InitializeComponent();
         }
+
+        private async void SendConfirmEmail(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"/{nameof(ForgetPassConfirm)}");
+        }
     }
 }
