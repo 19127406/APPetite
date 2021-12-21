@@ -35,7 +35,7 @@ namespace APPetite.Views
             }
             else
             {
-                var user = await FirebaseHelper.GetUserByUsername(username);
+                var user = await FirebaseAccountHelper.GetUserByUsername(username);
 
                 if (user != null)
                 {

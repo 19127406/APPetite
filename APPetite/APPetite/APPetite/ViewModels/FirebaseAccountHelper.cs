@@ -10,7 +10,7 @@ using APPetite.Models;
 
 namespace APPetite.ViewModels
 {
-    public class FirebaseHelper
+    public class FirebaseAccountHelper
     {
         public static FirebaseClient firebase = new FirebaseClient("https://projectse-21-22-default-rtdb.asia-southeast1.firebasedatabase.app/");
 

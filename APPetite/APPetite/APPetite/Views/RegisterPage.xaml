@@ -50,6 +50,7 @@
                                                   HeightRequest="45"
                                                   FontSize="16"
                                                   FontFamily="Montserrat-Regular"
+                                                  TextChanged="entryTextChanged"
                                                   ClearButtonVisibility="WhileEditing"/>
                     </Frame>
 
@@ -63,6 +64,7 @@
                                               HeightRequest="45"
                                               FontSize="16"
                                               FontFamily="Montserrat-Regular"
+                                              TextChanged="entryTextChanged"
                                               ClearButtonVisibility="WhileEditing"/>
                     </Frame>
 
@@ -77,6 +79,7 @@
                                               HeightRequest="45"
                                               FontSize="16"
                                               FontFamily="Montserrat-Regular"
+                                              TextChanged="entryTextChanged"
                                               ClearButtonVisibility="WhileEditing"/>
                     </Frame>
 
@@ -91,6 +94,7 @@
                                               HeightRequest="45"
                                               FontSize="16"
                                               FontFamily="Montserrat-Regular"
+                                              TextChanged="entryTextChanged"
                                               ClearButtonVisibility="WhileEditing"/>
                     </Frame>
 
@@ -98,14 +102,15 @@
                            BackgroundColor="Transparent"
                            Padding="0,10"
                            Margin="0,25,0,0">
-                        <Button Text="tạo tài khoản"
+                        <Button x:Name="signUpButton" Text="tạo tài khoản"
                                 HeightRequest="45"
                                 WidthRequest="250"
                                 HorizontalOptions="Center"
                                 CornerRadius="100"
                                 FontFamily="Montserrat-Regular"
                                 TextColor="White"
-                                BackgroundColor="{StaticResource Primary}"/>
+                                BackgroundColor="{StaticResource Primary}"
+                                Clicked="Sign_up_clicked" IsEnabled="False"/>
                     </Frame>
 
                 </StackLayout>

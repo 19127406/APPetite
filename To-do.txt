@@ -1,0 +1,1 @@
+Thiếu frame đỏ khi password và confirm password không giống
