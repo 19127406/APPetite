@@ -10,6 +10,7 @@
             <Frame HasShadow="False"
                    BackgroundColor="Transparent">
                 <ImageButton Source="chevron_left.png"
+                             Clicked="GoBackPage"
                              HorizontalOptions="Start"/>
             </Frame>
 

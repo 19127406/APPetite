@@ -21,5 +21,10 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync($"//{nameof(OpenPage)}");
         }
+
+        private async void GoBackPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }

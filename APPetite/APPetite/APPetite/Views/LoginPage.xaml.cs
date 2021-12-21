@@ -23,6 +23,11 @@ namespace APPetite.Views
             await Shell.Current.GoToAsync($"/{nameof(ForgetPassEmail)}");
         }
 
+        private async void GoBackPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
         private async void LoginApp(object sender, EventArgs e)
         {
             string username = username_login.Text,
@@ -41,6 +46,7 @@ namespace APPetite.Views
                 {
                     if ((username == user.Username || username == user.Email) && (password == user.Password || password == user.BackupPass))
                     {
+                        password_login.Text = "";
                         await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                     }
                     else

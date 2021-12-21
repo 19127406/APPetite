@@ -85,5 +85,10 @@ namespace APPetite.Views
         {
             checkToEnable();
         }
+
+        private async void GoBackPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }
