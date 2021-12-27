@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APPetite.Models
 {
-    class Recipe
+    public class Recipe
     {
         public string name
         {
@@ -17,11 +17,6 @@ namespace APPetite.Models
             set;
         }
         public string step
-        {
-            get;
-            set;
-        }
-        public string imageSource
         {
             get;
             set;
@@ -41,5 +36,11 @@ namespace APPetite.Models
             get;
             set;
         }
+    }
+
+    public class RootObject
+    {
+        public string type { get; set; }
+        public Recipe[] recipe { get; set; }
     }
 }

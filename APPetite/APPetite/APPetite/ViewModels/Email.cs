@@ -67,7 +67,7 @@ namespace APPetite.ViewModels
 
     public class Email
     {
-        public bool IsValidEmail(string email)
+        public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 return false;
@@ -111,7 +111,7 @@ namespace APPetite.ViewModels
             }
         }
 
-        public async void send_email(string emailAddress, string subject)
+        public static async void send_email(string emailAddress, string subject)
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
@@ -142,7 +142,7 @@ namespace APPetite.ViewModels
             SmtpServer.Send(mail);
         }
 
-        private async Task<string> html_reset_password(string emailAddress)
+        private static async Task<string> html_reset_password(string emailAddress)
         {
             var generator = new RandomGenerator();
             var randomThing = generator.GenerateRandom();

@@ -25,30 +25,29 @@ namespace APPetite.Views
                 password = password_register.Text,
                 confirmPass = password_again.Text;
 
-            Email emailValidCheck = new Email();
             if (!String.Equals(password, confirmPass))
             {
                 await App.Current.MainPage.DisplayAlert("Password mismatch", "Please make sure the password confirmation match", "OK");
             }
-            else if (password.Length <= 8)          // and something more, like special char, etc.
+            else if (password.Length < 8)          // and something more, like special char, etc.
             {
                 await App.Current.MainPage.DisplayAlert("Invalid Password", "", "OK");
             }
-            else if (!emailValidCheck.IsValidEmail(email_register.Text))
+            else if (!Email.IsValidEmail(email_register.Text))
             {
                 await App.Current.MainPage.DisplayAlert("Invalid Email Address", "Please enter correct Email Address.", "OK");
             }
             else
             {
-                var usernameExistCheck = await FirebaseAccountHelper.GetUserByUsername(username);
-                if (!String.IsNullOrEmpty(usernameExistCheck.Username))
+                var userCheck = await FirebaseAccountHelper.GetUserByUsername(username);
+                if (userCheck != null)
                 {
                     await App.Current.MainPage.DisplayAlert("Username already in use", "Username already exists. Please try with another one.", "OK");
                 }
                 else
                 {
-                    var emailExistCheck = await FirebaseAccountHelper.GetUserByEmail(email);
-                    if (!String.IsNullOrEmpty(emailExistCheck.Username))
+                    userCheck = await FirebaseAccountHelper.GetUserByEmail(email);
+                    if (userCheck != null)
                     {
                         await App.Current.MainPage.DisplayAlert("Email already in use", "An account with Email " + email + " already exists.", "OK");
                     }
@@ -65,7 +64,6 @@ namespace APPetite.Views
                         }
                     }
                 }
-                
             }
         }
 

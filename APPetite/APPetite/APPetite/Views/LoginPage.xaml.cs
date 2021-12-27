@@ -44,7 +44,7 @@ namespace APPetite.Views
 
                 if (user != null)
                 {
-                    if ((username == user.Username || username == user.Email) && (password == user.Password || password == user.BackupPass))
+                    if (username == user.Username && (password == user.Password || password == user.BackupPass))
                     {
                         password_login.Text = "";
                         await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
@@ -56,7 +56,24 @@ namespace APPetite.Views
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Login Failed", "Your Email or Password is incorrect.\nPlease try again", "OK");
+                    user = await FirebaseAccountHelper.GetUserByEmail(username);
+
+                    if (user != null)
+                    {
+                        if (username == user.Email && (password == user.Password || password == user.BackupPass))
+                        {
+                            password_login.Text = "";
+                            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Incorrect Password", "The Password you entered is incorrect. Please try again.", "OK");
+                        }
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Login Failed", "Your Email or Password is incorrect.\nPlease try again", "OK");
+                    }
                 }
             }
             

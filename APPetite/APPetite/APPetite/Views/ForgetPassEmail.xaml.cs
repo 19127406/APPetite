@@ -19,14 +19,13 @@ namespace APPetite.Views
 
         private async void SendConfirmEmail(object sender, EventArgs e)
         {
-            Email email = new Email();
-            if (!email.IsValidEmail(email_forgetpass.Text))
+            if (!Email.IsValidEmail(email_forgetpass.Text))
             {
                 await App.Current.MainPage.DisplayAlert("Invalid Email Address", "Please enter correct Email Address", "OK");
             }
             else
             {
-                email.send_email(email_forgetpass.Text, "Reset password");
+                Email.send_email(email_forgetpass.Text, "Reset password");
                 await Shell.Current.GoToAsync($"/{nameof(ForgetPassConfirm)}");
             }
         }
