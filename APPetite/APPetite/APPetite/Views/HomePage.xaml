@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:APPetite.ViewModels"
              x:Class="APPetite.Views.HomePage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="{StaticResource BackgroundPrimary}">
 
+    <ContentPage.BindingContext>
+        <vm:RecipeView/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
+            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -47,7 +52,7 @@
                                FontSize="24"
                                FontFamily="Montserrat-Medium"/>
 
-                        <!--<CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding }">
+                        <CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding data}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     
@@ -58,14 +63,15 @@
                                             <Frame Padding="0"
                                                    CornerRadius="10"
                                                    IsClippedToBounds="True">
-                                                <Image Source="{Binding imageSource}" 
+                                                
+                                                <Image Source="{Binding list}" 
                                                        WidthRequest="147" 
                                                        HeightRequest="177" 
                                                        Aspect="AspectFill"/>
                                             </Frame>
                                             <Frame Padding="10,0,5,10" BackgroundColor="Transparent"
                                                    Margin="0">
-                                                <Label Text="{Binding name}" FontSize="16"
+                                                <Label Text="{Binding }" FontSize="16"
                                                        TextColor="Black"
                                                        VerticalOptions="CenterAndExpand"
                                                        FontFamily="Montserrat-Regular"/>
@@ -75,9 +81,9 @@
                         
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
-                        </CollectionView>-->
+                        </CollectionView>
 
-                        <!-- xong thi xoa -->
+                        <!-- xong thi xoa
                         <Grid ColumnDefinitions="Auto, Auto, Auto" Padding="0">
                             <Frame HasShadow="True" BackgroundColor="Transparent" 
                                    Padding="5,5,0,5"
@@ -144,8 +150,8 @@
                                     </Frame>
                                 </StackLayout>
                             </Frame>
-                        </Grid>
-                        <!---->
+                        </Grid>-->
+                        
 
                     </StackLayout>
                 </Frame>

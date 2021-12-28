@@ -24,6 +24,8 @@
   <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
     <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="MonkeyCache.FileStore" Version="1.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
@@ -33,7 +35,6 @@
   <ItemGroup>
     <Folder Include="Temp\" />
     <Folder Include="Temp\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>

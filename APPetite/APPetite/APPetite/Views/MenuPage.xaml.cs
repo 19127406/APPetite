@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using APPetite.Services;
 
 namespace APPetite.Views
 {
@@ -35,11 +36,11 @@ namespace APPetite.Views
 
         private async void test(object sender, EventArgs e)
         {
-            var ok = await FirebaseStorageHelper.Download_Json("Banh_ngot");
+            //var ok = await new RecipeService().GetRecipeAllList();
             //concac.Source = Path.Combine(FileSystem.CacheDirectory, "1.png");
 
-            string text = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp.txt"));
-            RootObject recipe = JsonConvert.DeserializeObject<RootObject>(text);
+            //string text = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp.txt"));
+            //RootObject recipe = JsonConvert.DeserializeObject<RootObject>(text);
         }
     }
 }

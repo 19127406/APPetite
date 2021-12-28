@@ -21,7 +21,7 @@ namespace APPetite.ViewModels
             new FirebaseStorageOptions { ThrowOnCancel = true });
 
 
-        public static async Task<string> Upload_To_FirebaseStorage(string path, FileResult file)
+        public static async Task<string> Upload_File(string path, FileResult file)
         {
             if (file == null)
             {
@@ -79,35 +79,38 @@ namespace APPetite.ViewModels
             }
         }
 
-        public static async Task<bool> Download_Json(string fileName)
+        public static async Task<string> Download_Json(string fileName)
         {
+            if (!fileName.Contains(".json"))
+                fileName += ".json";
             try
             {
                 var fileURL = await firebaseStorage
                     .Child("DATABASE")
-                    .Child(fileName + ".json")
+                    .Child(fileName)
                     .GetDownloadUrlAsync();
 
+                var json = String.Empty;
                 using (var webClient = new WebClient())
                 {
-                    var json = webClient.DownloadString(fileURL);
-                    string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp.txt");
-                    using (var fileStream = new FileStream(tempPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                    {
-                        using (StreamWriter sw = new StreamWriter(fileStream))
-                        {
-                            fileStream.SetLength(0);
-                            sw.Write(json);
-                        }
-                    }
+                    json = webClient.DownloadString(fileURL);
+                    //string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp.txt");
+                    //using (var fileStream = new FileStream(tempPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                    //{
+                    //    using (StreamWriter sw = new StreamWriter(fileStream))
+                    //    {
+                    //        fileStream.SetLength(0);
+                    //        sw.Write(json);
+                    //    }
+                    //}
                 }
 
-                return true;
+                return json;
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Error:{e}");
-                return false;
+                return String.Empty;
             }
         }
 

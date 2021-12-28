@@ -11,12 +11,17 @@ namespace APPetite.Models
             get;
             set;
         }
-        public string ingredient
+        public List<string> ingredient
         {
             get;
             set;
         }
-        public string step
+        public List<string> step
+        {
+            get;
+            set;
+        }
+        public string imageSource
         {
             get;
             set;
@@ -31,16 +36,17 @@ namespace APPetite.Models
             get;
             set;
         }
-        public int difficulty
+        public string difficulty
         {
             get;
             set;
         }
     }
 
-    public class RootObject
+    public class Data
     {
         public string type { get; set; }
-        public Recipe[] recipe { get; set; }
+        public List<Recipe> list { get; set; }
     }
+
 }

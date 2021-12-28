@@ -160,7 +160,7 @@
                    HasShadow="False"
                    Padding="20,0">
                 <StackLayout>
-                    <Button Text="About us" Clicked="OpenAboutUsPage"
+                    <Button Text="About us" Clicked="test"
                         FontFamily="Montserrat-SemiBold"
                         TextTransform="None"
                         BackgroundColor="White"
