@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace APPetite.Models
+﻿namespace APPetite.Models
 {
     class LastLoginAccount
     {

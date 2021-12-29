@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using APPetite.Models;
 using Firebase.Storage;
 using Xamarin.Essentials;
-using Plugin.Media;
 using FFImageLoading;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace APPetite.ViewModels
 {

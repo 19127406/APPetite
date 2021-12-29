@@ -3,7 +3,6 @@ using Android.Graphics.Drawables;
 using APPetite.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using XamarinEntry;
 using XamarinEntry.Droid;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]

@@ -1,18 +1,6 @@
-﻿using APPetite.Models;
-using APPetite.ViewModels;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using APPetite.Services;
 
 namespace APPetite.Views
 {

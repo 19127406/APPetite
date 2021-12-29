@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using APPetite.ViewModels;
-using APPetite.Models;
-using APPetite.Views;
 
 namespace APPetite.ViewModels
 {

@@ -2,31 +2,58 @@
 using APPetite.Services;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace APPetite.ViewModels
 {
-    public class RecipeView
+    public class RecipeView : INotifyPropertyChanged
     {
+        protected RecipeService service = new RecipeService();
+
         public List<Data> data { get; set; }
+
+        public List<Recipe> randomData;
+
+        public ICommand GetRecipeCommand { get; set; }
+
+        public bool IsRunning { get; set; }
 
         public RecipeView()
         {
-            data = new RecipeService().GetRecipeAllList();
+            GetRecipeCommand = new Command(async () => await GetRecipe());
+            GetRecipeCommand.Execute(null);
         }
 
-        public List<string> getImageSource()
+        private async Task GetRecipe()
         {
-            List<string> imageUrl = new List<string>();
-            foreach (var list in data)
+            IsRunning = true;
+
+            var result = await service.GetRecipeAllList();
+            if (result != null)
+                data = new List<Data>(result);
+
+            IsRunning = false;
+        }
+
+        public void GetRandomData()
+        {
+            try
             {
-                foreach (var recipe in list.list)
+                Random rnd = new Random();
+                foreach (var list in data)
                 {
-                    imageUrl.Add(recipe.imageSource);
+                    randomData.Add(list.list[rnd.Next(0, list.list.Count)]);
                 }
             }
-            return imageUrl;
+            catch
+            {
+
+            }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
