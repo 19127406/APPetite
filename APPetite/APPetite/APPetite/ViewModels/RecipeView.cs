@@ -15,7 +15,7 @@ namespace APPetite.ViewModels
 
         public List<Data> data { get; set; }
 
-        public List<Recipe> randomData;
+        public List<Recipe> randomData { get; set; }
 
         public ICommand GetRecipeCommand { get; set; }
 
@@ -23,6 +23,7 @@ namespace APPetite.ViewModels
 
         public RecipeView()
         {
+            randomData = new List<Recipe>();
             GetRecipeCommand = new Command(async () => await GetRecipe());
             GetRecipeCommand.Execute(null);
         }
@@ -36,21 +37,11 @@ namespace APPetite.ViewModels
                 data = new List<Data>(result);
 
             IsRunning = false;
-        }
 
-        public void GetRandomData()
-        {
-            try
+            Random rnd = new Random();
+            foreach (var list in data)
             {
-                Random rnd = new Random();
-                foreach (var list in data)
-                {
-                    randomData.Add(list.list[rnd.Next(0, list.list.Count)]);
-                }
-            }
-            catch
-            {
-
+                randomData.Add(list.list[rnd.Next(0, list.list.Count)]);
             }
         }
 

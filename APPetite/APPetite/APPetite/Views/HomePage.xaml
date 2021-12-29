@@ -166,7 +166,7 @@
                                FontSize="18"
                                FontFamily="Montserrat-Medium"/>
 
-                        <!--<CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding }">
+                        <CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding randomData}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     
@@ -174,7 +174,7 @@
                                            CornerRadius="10"
                                            IsClippedToBounds="True"
                                            Margin="15,10,0,10">
-                                        <Image Source="{Binding }"
+                                        <Image Source="{Binding imageSource}"
                                                WidthRequest="210"
                                                HeightRequest="128"
                                                Aspect="AspectFill"/>
@@ -182,9 +182,9 @@
                         
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
-                        </CollectionView>-->
+                        </CollectionView>
 
-                        <!-- xong thi xoa -->
+                        <!-- xong thi xoa
                         <Grid ColumnDefinitions="Auto,Auto,Auto" Padding="0">
                             <Frame Padding="0"
                                    CornerRadius="10"
@@ -216,7 +216,7 @@
                                        Aspect="AspectFill"/>
                             </Frame>
                         </Grid>
-                        <!---->
+                        -->
 
                     </StackLayout>
                 </Frame>
