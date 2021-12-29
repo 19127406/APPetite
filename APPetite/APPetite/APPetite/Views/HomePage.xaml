@@ -10,9 +10,7 @@
         <vm:RecipeView/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            
-            <Grid>
+        <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -55,7 +53,7 @@
                         <CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding randomData}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    
+
                                     <Frame HasShadow="True" BackgroundColor="Transparent" 
                                            Padding="5"
                                            Margin="10,10,10,5">
@@ -63,7 +61,7 @@
                                             <Frame Padding="0"
                                                    CornerRadius="10"
                                                    IsClippedToBounds="True">
-                                                
+
                                                 <Image Source="{Binding imageSource}" 
                                                        WidthRequest="147" 
                                                        HeightRequest="177" 
@@ -78,7 +76,7 @@
                                             </Frame>
                                         </StackLayout>
                                     </Frame>
-                        
+
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
@@ -151,7 +149,7 @@
                                 </StackLayout>
                             </Frame>
                         </Grid>-->
-                        
+
 
                     </StackLayout>
                 </Frame>
@@ -169,7 +167,7 @@
                         <CollectionView ItemsLayout="HorizontalList" ItemsSource="{Binding randomData}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    
+
                                     <Frame Padding="0"
                                            CornerRadius="10"
                                            IsClippedToBounds="True"
@@ -179,7 +177,7 @@
                                                HeightRequest="128"
                                                Aspect="AspectFill"/>
                                     </Frame>
-                        
+
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
@@ -423,7 +421,6 @@
                 </Frame>
 
             </Grid>
-        </StackLayout>
     </ContentPage.Content>
 
 </ContentPage>

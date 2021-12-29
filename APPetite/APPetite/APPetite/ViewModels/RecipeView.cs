@@ -2,6 +2,7 @@
 using APPetite.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -13,9 +14,9 @@ namespace APPetite.ViewModels
     {
         protected RecipeService service = new RecipeService();
 
-        public List<Data> data { get; set; }
+        public ObservableCollection<Data> data { get; set; }
 
-        public List<Recipe> randomData { get; set; }
+        public ObservableCollection<Recipe> randomData { get; set; }
 
         public ICommand GetRecipeCommand { get; set; }
 
@@ -23,7 +24,7 @@ namespace APPetite.ViewModels
 
         public RecipeView()
         {
-            randomData = new List<Recipe>();
+            randomData = new ObservableCollection<Recipe>();
             GetRecipeCommand = new Command(async () => await GetRecipe());
             GetRecipeCommand.Execute(null);
         }
@@ -34,7 +35,7 @@ namespace APPetite.ViewModels
 
             var result = await service.GetRecipeAllList();
             if (result != null)
-                data = new List<Data>(result);
+                data = new ObservableCollection<Data>(result);
 
             IsRunning = false;
 
