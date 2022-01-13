@@ -39,6 +39,16 @@ namespace APPetite.Models
             get;
             set;
         }
+        //public int likes
+        //{
+        //    get;
+        //    set;
+        //}
+        public bool Equals(Recipe other)
+        {
+            if (this.name != other.name) return false;
+            return true;
+        }
     }
 
     public class Data
