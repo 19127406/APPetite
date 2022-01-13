@@ -22,5 +22,10 @@
             get;
             set;
         }
+        public Data myRecipe
+        {
+            get;
+            set;
+        }
     }
 }

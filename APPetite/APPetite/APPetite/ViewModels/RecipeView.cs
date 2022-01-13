@@ -16,7 +16,9 @@ namespace APPetite.ViewModels
 
         public ObservableCollection<Data> data { get; set; }
 
-        public ObservableCollection<Recipe> randomData { get; set; }
+        public ObservableCollection<Recipe> firstCollection { get; set; }
+        public ObservableCollection<Recipe> secondCollection { get; set; }
+        public ObservableCollection<Recipe> thirdCollection { get; set; }
 
         public ICommand GetRecipeCommand { get; set; }
 
@@ -24,7 +26,9 @@ namespace APPetite.ViewModels
 
         public RecipeView()
         {
-            randomData = new ObservableCollection<Recipe>();
+            firstCollection = new ObservableCollection<Recipe>();
+            secondCollection = new ObservableCollection<Recipe>();
+            thirdCollection = new ObservableCollection<Recipe>();
             GetRecipeCommand = new Command(async () => await GetRecipe());
             GetRecipeCommand.Execute(null);
         }
@@ -40,12 +44,92 @@ namespace APPetite.ViewModels
             IsRunning = false;
 
             Random rnd = new Random();
+            int i = 0, j = 0, k = 0;
             foreach (var list in data)
             {
-                randomData.Add(list.list[rnd.Next(0, list.list.Count)]);
+                
+                if (i >= 5)
+                    break;
+                while (rnd.Next(0, 2) == 1)
+                {
+                    while (true)
+                    {
+                        var randomRep = list.list[rnd.Next(0, list.list.Count)];
+                        var flagDuplicate = false;
+                        foreach (var meal in firstCollection)
+                        {
+                            if (meal.Equals(randomRep))
+                            {
+                                flagDuplicate = true;
+                                break;
+                            }
+                        }
+                        if (flagDuplicate == false)
+                        {
+                            firstCollection.Add(randomRep);
+                            i += 1;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            foreach (var list in data)
+            {
+                if (j >= 7)
+                    break;
+                while (rnd.Next(0, 2) == 1)
+                {
+                    while (true)
+                    {
+                        var randomRep = list.list[rnd.Next(0, list.list.Count)];
+                        var flagDuplicate = false;
+                        foreach (var meal in secondCollection)
+                        {
+                            if (meal.Equals(randomRep))
+                            {
+                                flagDuplicate = true;
+                                break;
+                            }
+                        }
+                        if (flagDuplicate == false)
+                        {
+                            secondCollection.Add(randomRep);
+                            j += 1;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            foreach (var list in data)
+            {
+                if (k >= 17)
+                    break;
+                while (rnd.Next(0, 2) == 1)
+                {
+                    while (true)
+                    {
+                        var randomRep = list.list[rnd.Next(0, list.list.Count)];
+                        var flagDuplicate = false;
+                        foreach (var meal in thirdCollection)
+                        {
+                            if (meal.Equals(randomRep))
+                            {
+                                flagDuplicate = true;
+                                break;
+                            }
+                        }
+                        if (flagDuplicate == false)
+                        {
+                            thirdCollection.Add(randomRep);
+                            k += 1;
+                            break;
+                        }
+                    }
+                }
             }
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -46,7 +46,7 @@
 
                     <CollectionView Grid.Row="1"
                                     ItemsLayout="HorizontalList"
-                                    ItemsSource="{Binding randomData}"
+                                    ItemsSource="{Binding firstCollection}"
                                     HorizontalScrollBarVisibility="Never"
                                     HeightRequest="255"
                                     Margin="10,0,0,0">
@@ -87,7 +87,7 @@
 
                     <CollectionView Grid.Row="3"
                                     ItemsLayout="HorizontalList"
-                                    ItemsSource="{Binding randomData}"
+                                    ItemsSource="{Binding secondCollection}"
                                     HorizontalScrollBarVisibility="Never"
                                     HeightRequest="128"
                                     Margin="10,0,0,22">
@@ -115,7 +115,7 @@
                            FontSize="18"
                            FontFamily="Montserrat-Medium"/>
 
-                    <StackLayout Grid.Row="5" BindableLayout.ItemsSource="{Binding randomData}">
+                    <StackLayout Grid.Row="5" BindableLayout.ItemsSource="{Binding thirdCollection}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
 
