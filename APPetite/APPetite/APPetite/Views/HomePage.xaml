@@ -23,7 +23,7 @@
                                  Margin="20,0"/>
                     <Image Grid.Column="1" 
                            Source="logo.png" 
-                           WidthRequest="160" 
+                           WidthRequest="170" 
                            HeightRequest="50"
                            Aspect="AspectFill"
                            HorizontalOptions="Center"
@@ -171,9 +171,9 @@
                                                              Padding="5,0"
                                                              Margin="5,0"
                                                              HorizontalOptions="Start">
-                                                    <Image Source="analytics.png"
+                                                    <Image Source="schedule.png"
                                                            WidthRequest="20"/>
-                                                    <Label Text="{Binding difficulty}" 
+                                                    <Label Text="{Binding cookingTime}" 
                                                            VerticalOptions="CenterAndExpand"
                                                            FontFamily="Montserrat-SemiBold"
                                                            FontSize="13"/>
@@ -183,9 +183,9 @@
                                                              Padding="5,0"
                                                              Margin="5,0"
                                                              HorizontalOptions="Center">
-                                                    <Image Source="schedule.png"
+                                                    <Image Source="poll.png"
                                                            WidthRequest="20"/>
-                                                    <Label Text="{Binding cookingTime}"
+                                                    <Label Text="{Binding difficulty}"
                                                            VerticalOptions="CenterAndExpand"
                                                            FontFamily="Montserrat-SemiBold"
                                                            FontSize="13"/>

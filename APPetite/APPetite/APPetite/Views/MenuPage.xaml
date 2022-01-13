@@ -14,7 +14,7 @@
                     <Frame Padding="0"
                            CornerRadius="100"
                            IsClippedToBounds="True">
-                        <Image Source="istockphoto_1.png" 
+                        <Image Source="account_circle_black.png" 
                                WidthRequest="75" 
                                HeightRequest="75" 
                                Aspect="AspectFill"/>
