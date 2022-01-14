@@ -58,6 +58,11 @@
                                        Padding="5"
                                        Margin="10,10,10,5"
                                        WidthRequest="147">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                              Tapped="OpenRecipeDetail"/>
+                                    </Frame.GestureRecognizers>
+                                    
                                     <StackLayout>
                                         <Frame Padding="0"
                                                CornerRadius="10"
@@ -97,6 +102,11 @@
                                 <Frame HasShadow="False"
                                        Padding="5,5,10,5"
                                        BackgroundColor="Transparent">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                              Tapped="OpenRecipeDetail"/>
+                                    </Frame.GestureRecognizers>
+                                    
                                     <Frame Padding="0"
                                            CornerRadius="10"
                                            IsClippedToBounds="True"
@@ -126,6 +136,11 @@
                                        CornerRadius="5"
                                        IsClippedToBounds="True"
                                        HasShadow="False">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                              Tapped="OpenRecipeDetail"/>
+                                    </Frame.GestureRecognizers>
+                                    
                                     <StackLayout>
                                         <Image Source="{Binding imageSource}"
                                            WidthRequest="200"

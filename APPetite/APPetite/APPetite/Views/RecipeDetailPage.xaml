@@ -1,12 +1,290 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.RecipeDetailPage">
+             x:Class="APPetite.Views.RecipeDetailPage"
+             BackgroundColor="{StaticResource BackgroundPrimary}"
+             Shell.NavBarIsVisible="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="Transparent"
+                       HasShadow="False"
+                       Padding="0"
+                       HeightRequest="192">
+                    <Grid RowDefinitions="Auto">
+                        <Image Source="istockphoto_1.png"
+                               Aspect="AspectFill"/>
+                        <ImageButton Source="chevron_left.png"
+                                         BackgroundColor="Transparent"
+                                         VerticalOptions="Start"
+                                         HorizontalOptions="Start"
+                                         Margin="20,15,0,0"
+                                         Clicked="GoBackPage">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Source"
+                                                        Value="chevron_left.png"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Source"
+                                                        Value="chevron_left_fill_round.png"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                    </Grid>
+                </Frame>
+
+                <StackLayout>
+                    <Frame BackgroundColor="Transparent"
+                               Padding="0,20,0,5"
+                               HasShadow="False">
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                                  ColumnDefinitions="*,*,*">
+                            <Label Grid.Row="0" Grid.ColumnSpan="2"
+                                   Text="Something"
+                                   TextColor="{StaticResource Secondary}"
+                                   FontSize="26"
+                                   FontFamily="Montserrat-Medium"
+                                   HorizontalOptions="Start"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   Margin="25,0,0,0"/>
+                            <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                   Text="by OK"
+                                   FontFamily="Montserrat-SemiBold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Start"
+                                   Margin="30,0,0,15"/>
+
+                            <Frame Grid.Row="0" Grid.Column="2"
+                                   BackgroundColor="Transparent"
+                                   HasShadow="False"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   Padding="0,10,30,0">
+                                <StackLayout Orientation="Horizontal">
+                                    <ImageButton Source="favorite.png"
+                                                 BackgroundColor="Transparent"
+                                                 WidthRequest="25"/>
+                                    <Label Text="100"
+                                           TextColor="Black"
+                                           FontSize="14"
+                                           VerticalTextAlignment="Center"
+                                           FontFamily="Montserrat-SemiBold"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="2" Grid.Column="0"
+                                       BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="schedule.png"
+                                               WidthRequest="20"/>
+                                    <Label Text="10 phut"
+                                           FontFamily="Montserrat-SemiBold"
+                                               VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="1"
+                                       BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="poll.png"
+                                               WidthRequest="20"/>
+                                    <Label Text="De"
+                                           FontFamily="Montserrat-SemiBold"
+                                               VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="2"
+                                       BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="people.png"
+                                               WidthRequest="20"/>
+                                    <Label Text="2 nguoi"
+                                           FontFamily="Montserrat-SemiBold"
+                                               VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+
+
+                    <Label Text="nguyên liệu"
+                           FontFamily="Montserrat-Bold"
+                               TextTransform="Uppercase"
+                               TextColor="{StaticResource Primary}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Margin="0,25,0,3"/>
+                    <Frame HasShadow="False"
+                               Padding="0,15">
+                        <StackLayout>
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+
+                    <Label Text="cách thực hiện"
+                           FontFamily="Montserrat-Bold"
+                               TextColor="{StaticResource Primary}"
+                               TextTransform="Uppercase"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Margin="0,20,0,3"/>
+
+                    <Frame HasShadow="False"
+                               Padding="0,15">
+                        <StackLayout>
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="circle_fill.png"
+                                               WidthRequest="10"
+                                               Margin="20,0"/>
+                                    <Label Text="Ingredient"
+                                           FontFamily="Montserrat-Light"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +10,13 @@ namespace APPetite.Views
         public CategoryPage()
         {
             InitializeComponent();
+        }
+
+        public async void OpenCategoryDetail(object sender, EventArgs e)
+        {
+            //Button btn = sender as Button;
+            //btn.id
+            await Shell.Current.GoToAsync($"/{nameof(CategoryDetailPage)}");
         }
     }
 }

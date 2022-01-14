@@ -13,7 +13,26 @@
                 <ImageButton Source="chevron_left.png"
                              Clicked="GoBackPage"
                              HorizontalOptions="Start"
-                             BackgroundColor="Transparent"/>
+                             BackgroundColor="Transparent">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                    Value="chevron_left.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                    Value="chevron_left_fill_round.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
             </Frame>
 
             <Frame Grid.Row="1"

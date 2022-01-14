@@ -17,5 +17,10 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync("..");
         }
+
+        public async void OpenRecipeDetail(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"/{nameof(RecipeDetailPage)}");
+        }
     }
 }
