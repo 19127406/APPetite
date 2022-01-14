@@ -126,121 +126,85 @@
                                        CornerRadius="5"
                                        IsClippedToBounds="True"
                                        HasShadow="False">
-                                <StackLayout>
-                                    <Image Source="{Binding imageSource}"
+                                    <StackLayout>
+                                        <Image Source="{Binding imageSource}"
                                            WidthRequest="200"
                                            HeightRequest="130"
                                            Aspect="AspectFill"/>
-                                    <Frame HasShadow="False" Padding="12,5">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
-                                            </Grid.RowDefinitions>
+                                        <Frame HasShadow="False" Padding="12,5">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
 
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
-                                            <Label Grid.Row="0" Grid.Column="0" 
+                                                <Label Grid.Row="0" Grid.Column="0" 
                                                    Text="category"
                                                    Padding="10,0"
                                                    FontSize="10"
                                                    TextTransform="Uppercase"
                                                    FontFamily="Montserrat-Medium"/>
-                                            <Label Grid.Row="1" Grid.Column="0" 
+                                                <Label Grid.Row="1" Grid.Column="0" 
                                                    Text="{Binding name}"
                                                    Padding="10,0"
                                                    FontSize="20"
                                                    FontFamily="Montserrat-SemiBold"
                                                    TextColor="#4a4a4a"/>
-                                            <StackLayout Grid.Column="1" Grid.RowSpan="2" 
+                                                <StackLayout Grid.Column="1" Grid.RowSpan="2" 
                                                          Orientation="Horizontal"
                                                          HorizontalOptions="End"
                                                          Padding="10">
-                                                <ImageButton Source="favorite.png"
+                                                    <ImageButton Source="favorite.png"
                                                              BackgroundColor="Transparent"/>
-                                                <Label Text="{Binding likes}"
+                                                    <Label Text="{Binding likes}"
                                                        VerticalOptions="CenterAndExpand"
                                                        FontFamily="Montserrat-SemiBold"/>
-                                            </StackLayout>
-                                            <Grid Grid.Row="2" Grid.ColumnSpan="2" 
-                                                  ColumnDefinitions="*,*,*"
-                                                  Margin="0,6">
-                                                <StackLayout Orientation="Horizontal"
-                                                             Padding="5,0"
-                                                             Margin="5,0"
-                                                             HorizontalOptions="Start">
-                                                    <Image Source="analytics.png"
-                                                           WidthRequest="20"/>
-                                                    <Label Text="{Binding difficulty}" 
-                                                           VerticalOptions="CenterAndExpand"
-                                                           FontFamily="Montserrat-SemiBold"
-                                                           FontSize="13"/>
-                                                </StackLayout>
-                                                <StackLayout Grid.Column="1" 
-                                                             Orientation="Horizontal"
-                                                             Padding="5,0"
-                                                             Margin="5,0"
-                                                             HorizontalOptions="Center">
-                                                    <Image Source="schedule.png"
-                                                           WidthRequest="20"/>
-                                                    <Label Text="{Binding cookingTime}"
-                                                           VerticalOptions="CenterAndExpand"
-                                                           FontFamily="Montserrat-SemiBold"
-                                                           FontSize="13"/>
-                                                </StackLayout>
-                                                <StackLayout Grid.Column="2" 
-                                                             Orientation="Horizontal"
-                                                             HorizontalOptions="End"
-                                                             Padding="10">
-                                                    <ImageButton Source="favorite.png"
-                                                                 BackgroundColor="Transparent"/>
-                                                    <Label Text="100"
-                                                           VerticalOptions="CenterAndExpand"
-                                                           FontFamily="Montserrat-SemiBold"/>
                                                 </StackLayout>
                                                 <Grid Grid.Row="2" Grid.ColumnSpan="2" 
-                                                      ColumnDefinitions="*,*,*"
-                                                      Margin="0,6">
+                                                  ColumnDefinitions="*,*,*"
+                                                  Margin="0,6">
                                                     <StackLayout Orientation="Horizontal"
                                                                  Padding="5,0"
                                                                  Margin="5,0"
                                                                  HorizontalOptions="Start">
-                                                        <Image Source="schedule.png"
+                                                            <Image Source="schedule.png"
                                                                WidthRequest="20"/>
-                                                        <Label Text="{Binding cookingTime}" 
+                                                            <Label Text="{Binding cookingTime}" 
                                                                VerticalOptions="CenterAndExpand"
                                                                FontFamily="Montserrat-SemiBold"
                                                                FontSize="13"/>
-                                                    </StackLayout>
-                                                    <StackLayout Grid.Column="1" 
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="1" 
                                                                  Orientation="Horizontal"
                                                                  Padding="5,0"
                                                                  Margin="5,0"
                                                                  HorizontalOptions="Center">
-                                                        <Image Source="poll.png"
+                                                            <Image Source="poll.png"
                                                                WidthRequest="20"/>
-                                                        <Label Text="{Binding difficulty}"
+                                                            <Label Text="{Binding difficulty}"
                                                                VerticalOptions="CenterAndExpand"
                                                                FontFamily="Montserrat-SemiBold"
                                                                FontSize="13"/>
-                                                    </StackLayout>
-                                                    <StackLayout Grid.Column="2" 
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="2" 
                                                                  Orientation="Horizontal"
                                                                  Padding="5,0"
                                                                  Margin="5,0"
                                                                  HorizontalOptions="End">
-                                                        <Image Source="people.png"
+                                                            <Image Source="people.png"
                                                                WidthRequest="20"/>
-                                                        <Label Text="{Binding numberPerson}"
+                                                            <Label Text="{Binding numberPerson}"
                                                                VerticalOptions="CenterAndExpand"
                                                                FontFamily="Montserrat-SemiBold"
                                                                FontSize="13"/>
-                                                    </StackLayout>
-                                                </Grid>
+                                                        </StackLayout>
+                                                    </Grid>
                                             </Grid>
                                         </Frame>
                                     </StackLayout>
