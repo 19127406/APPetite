@@ -1,6 +1,8 @@
-﻿
+﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using APPetite.ViewModels;
 
 namespace APPetite.Views
 {
@@ -10,6 +12,11 @@ namespace APPetite.Views
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        public async void Refresh(object sender, EventArgs e)
+        {
+            await Task.Delay(3000);
         }
     }
 }

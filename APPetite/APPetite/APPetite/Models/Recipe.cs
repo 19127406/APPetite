@@ -39,7 +39,17 @@ namespace APPetite.Models
             get;
             set;
         }
-        //public int likes
+        public int likes
+        {
+            get;
+            set;
+        }
+        //public string publisher
+        //{
+        //    get;
+        //    set;
+        //}
+        //public string category
         //{
         //    get;
         //    set;

@@ -10,6 +10,7 @@
     <ContentPage.BindingContext>
         <vm:RecipeView/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*">
             <Frame BackgroundColor="Transparent" 
@@ -35,7 +36,7 @@
                                  Margin="20,0"/>
                 </Grid>
             </Frame>
-
+            <!--<RefreshView x:Name="refreshView" RefreshColor="{StaticResource Primary}" Refreshing="Refresh">-->
             <ScrollView Grid.Row="1" Padding="0,15,0,0">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*">
                     <Label Text="Món ngon&#10;trong ngày" 
@@ -160,7 +161,7 @@
                                                          Padding="10">
                                                 <ImageButton Source="favorite.png"
                                                              BackgroundColor="Transparent"/>
-                                                <Label Text="100"
+                                                <Label Text="{Binding likes}"
                                                        VerticalOptions="CenterAndExpand"
                                                        FontFamily="Montserrat-SemiBold"/>
                                             </StackLayout>
@@ -214,8 +215,8 @@
 
                 </Grid>
             </ScrollView>
-
+            <!--</RefreshView>-->
         </Grid>
     </ContentPage.Content>
-
+    
 </ContentPage>
