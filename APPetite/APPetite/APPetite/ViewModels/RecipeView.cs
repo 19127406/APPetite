@@ -56,7 +56,7 @@ namespace APPetite.ViewModels
                 foreach (var list in data)
                 {
 
-                    if (i >= n)
+                    if (i == n)
                         break;
                     while (rnd.Next(0, 2) == 1)
                     {
