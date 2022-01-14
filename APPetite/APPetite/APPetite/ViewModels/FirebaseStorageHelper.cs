@@ -37,41 +37,41 @@ namespace APPetite.ViewModels
         }
 
 
-        public static async Task<bool> Download_Image(string path, string fileName)
-        {
-            try
-            {
-                var fileURL = await firebaseStorage
-                    .Child("Image_food")
-                    .Child(path.Replace("\\", "/"))
-                    .Child(fileName)
-                    .GetDownloadUrlAsync();
+        //public static async Task<bool> Download_Image(string path, string fileName)
+        //{
+        //    try
+        //    {
+        //        var fileURL = await firebaseStorage
+        //            .Child("Image_food")
+        //            .Child(path.Replace("\\", "/"))
+        //            .Child(fileName)
+        //            .GetDownloadUrlAsync();
 
-                Stream imageByteArray = await ImageService.Instance.LoadUrl(fileURL)
-                    .Retry(3, 300)
-                    .DownSample(512, 512)
-                    .AsPNGStreamAsync();
+        //        Stream imageByteArray = await ImageService.Instance.LoadUrl(fileURL)
+        //            .Retry(3, 300)
+        //            .DownSample(512, 512)
+        //            .AsPNGStreamAsync();
 
-                //var haha = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                string tempPath = Path.Combine(FileSystem.CacheDirectory, path.Replace("\\", "/").Split('/')[1] + ".png");
-                // tempPath = "/data/user/0/com.companyname.appetite/cache/1.png"
-                //string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
-                using (var fileStream = new FileStream(tempPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                {
-                    imageByteArray.Position = 0;
-                    imageByteArray.CopyTo(fileStream);
-                    fileStream.Dispose();
-                    fileStream.Close();
-                }
+        //        //var haha = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        //        string tempPath = Path.Combine(FileSystem.CacheDirectory, path.Replace("\\", "/").Split('/')[1] + ".png");
+        //        // tempPath = "/data/user/0/com.companyname.appetite/cache/1.png"
+        //        //string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
+        //        using (var fileStream = new FileStream(tempPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+        //        {
+        //            imageByteArray.Position = 0;
+        //            imageByteArray.CopyTo(fileStream);
+        //            fileStream.Dispose();
+        //            fileStream.Close();
+        //        }
 
-                return true;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine($"Error:{e}");
-                return false;
-            }
-        }
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Debug.WriteLine($"Error:{e}");
+        //        return false;
+        //    }
+        //}
 
         public static async Task<string> Download_Json(string fileName)
         {

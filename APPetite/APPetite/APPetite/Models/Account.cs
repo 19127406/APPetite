@@ -1,4 +1,7 @@
-﻿namespace APPetite.Models
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace APPetite.Models
 {
     public class Account
     {
@@ -22,10 +25,18 @@
             get;
             set;
         }
-        public Data myRecipe
+        public string RecipeJson
         {
             get;
             set;
+        }
+        public List<Data> jsonToListRecipe()
+        {
+            return JsonConvert.DeserializeObject<List<Data>>(RecipeJson);
+        }
+        public void listToRecipeJson(List<Data> value)
+        {
+            RecipeJson = JsonConvert.SerializeObject(value);
         }
     }
 }

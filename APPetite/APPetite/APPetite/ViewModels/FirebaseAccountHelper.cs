@@ -26,7 +26,8 @@ namespace APPetite.ViewModels
                     Username = item.Object.Username,
                     Password = item.Object.Password,
                     Email = item.Object.Email,
-                    BackupPass = item.Object.BackupPass
+                    BackupPass = item.Object.BackupPass,
+                    RecipeJson = item.Object.RecipeJson
                 }).ToList();
                 return userlist;
             }
@@ -83,7 +84,8 @@ namespace APPetite.ViewModels
                     Username = username, 
                     Email = email, 
                     Password = password,
-                    BackupPass = ""
+                    BackupPass = "",
+                    RecipeJson = ""
                 });
                 return true;
             }
@@ -95,7 +97,7 @@ namespace APPetite.ViewModels
         }
 
         //Update        
-        public static async Task<bool> UpdateUser(string username, string email, string password, string backupPass)
+        public static async Task<bool> UpdateUser(string username, string email, string password, string backupPass, string recipe)
         {
             try
             {
@@ -109,7 +111,8 @@ namespace APPetite.ViewModels
                     Username = username, 
                     Password = password, 
                     Email = email,
-                    BackupPass = backupPass
+                    BackupPass = backupPass,
+                    RecipeJson = recipe
                 });
                 return true;
             }

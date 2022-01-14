@@ -17,7 +17,7 @@
 
             <ScrollView Padding="0" Margin="0">
                 <StackLayout>
-                    <Button Text="bánh ngọt" x:Name="Banh_ngot"
+                    <Button Text="bánh ngọt" ClassId="Banh_ngot" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -27,8 +27,8 @@
                             WidthRequest="330"
                             Margin="0,0,0,5"
                             Clicked="OpenCategoryDetail"/>
-                    
-                    <Button Text="chả"
+
+                    <Button ClassId="Cha" Text="chả" Clicked="OpenCategoryDetail" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -37,8 +37,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="chè"
+
+                    <Button Text="chè" Clicked="OpenCategoryDetail" ClassId="Che" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -47,8 +47,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="gỏi"
+
+                    <Button Text="gỏi" Clicked="OpenCategoryDetail" ClassId="Goi" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -57,8 +57,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="mì xào"
+
+                    <Button Text="mì xào" Clicked="OpenCategoryDetail" ClassId="Mi_xao" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -67,8 +67,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món ăn vặt"
+
+                    <Button Text="món ăn vặt" Clicked="OpenCategoryDetail" ClassId="Mon_an_vat" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -77,8 +77,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món canh"
+
+                    <Button Text="món canh" Clicked="OpenCategoryDetail" ClassId="Mon_canh" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -87,8 +87,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món chay"
+
+                    <Button Text="món chay" Clicked="OpenCategoryDetail" ClassId="Mon_chay" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -97,8 +97,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món chiên"
+
+                    <Button Text="món chiên" Clicked="OpenCategoryDetail" ClassId="Mon_chien" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -107,8 +107,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món hải sản"
+
+                    <Button Text="món hải sản" Clicked="OpenCategoryDetail" ClassId="Mon_hai_san" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -117,8 +117,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món hầm"
+
+                    <Button Text="món hầm" Clicked="OpenCategoryDetail" ClassId="Mon_ham" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -127,8 +127,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món hấp"
+
+                    <Button Text="món hấp" Clicked="OpenCategoryDetail" ClassId="Mon_hap" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -137,8 +137,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món kho"
+
+                    <Button Text="món kho" Clicked="OpenCategoryDetail" ClassId="Mon_kho" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -147,8 +147,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món lẩu"
+
+                    <Button Text="món lẩu" Clicked="OpenCategoryDetail" ClassId="Mon_lau" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -157,8 +157,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món nước"
+
+                    <Button Text="món nước" Clicked="OpenCategoryDetail" ClassId="Mon_nuoc" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -167,8 +167,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="món nướng"
+
+                    <Button Text="món nướng" Clicked="OpenCategoryDetail" ClassId="Mon_nuong" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -177,8 +177,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="rau xào"
+
+                    <Button Text="rau xào" Clicked="OpenCategoryDetail" ClassId="Rau_xao" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -187,8 +187,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="salad"
+
+                    <Button Text="salad" Clicked="OpenCategoryDetail" ClassId="Salad" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -197,8 +197,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="sinh tố"
+
+                    <Button Text="sinh tố" Clicked="OpenCategoryDetail" ClassId="Sinh_to" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"
@@ -207,8 +207,8 @@
                             HeightRequest="50"
                             WidthRequest="330"
                             Margin="0,0,0,5"/>
-                    
-                    <Button Text="xôi"
+
+                    <Button Text="xôi" Clicked="OpenCategoryDetail" ClassId="Xoi" 
                             FontFamily="Montserrat-SemiBold"
                             TextColor="#4a4a4a"
                             CornerRadius="5"

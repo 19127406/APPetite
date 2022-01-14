@@ -5,10 +5,7 @@
              x:Class="APPetite.Views.CategoryDetailPage"
              BackgroundColor="{StaticResource BackgroundPrimary}"
              Shell.NavBarIsVisible="False">
-    <ContentPage.BindingContext>
-        <vm:RecipeView/>
-    </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="Transparent"
@@ -60,7 +57,7 @@
                         </StackLayout>
                     </Frame>
 
-                    <StackLayout BindableLayout.ItemsSource="{Binding firstCollection}"
+                    <StackLayout BindableLayout.ItemsSource="{Binding}"
                                  Spacing="1"
                                  Margin="0,15,0,0">
                         <BindableLayout.ItemTemplate>

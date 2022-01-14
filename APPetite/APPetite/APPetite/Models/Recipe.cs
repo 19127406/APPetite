@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace APPetite.Models
 {
@@ -65,5 +66,10 @@ namespace APPetite.Models
     {
         public string type { get; set; }
         public List<Recipe> list { get; set; }
+
+        public string dataToJson(List<Data> value)
+        {
+            return JsonConvert.SerializeObject(value);
+        }
     }
 }

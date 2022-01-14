@@ -1,3 +1,4 @@
 Thiếu frame đỏ khi password và confirm password không giống
 Like
 Recipe account
+search page
