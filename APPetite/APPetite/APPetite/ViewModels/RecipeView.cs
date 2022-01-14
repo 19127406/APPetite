@@ -46,20 +46,35 @@ namespace APPetite.ViewModels
             Random rnd = new Random();
             for (int iter = 0; iter < 3; iter++)
             {
-                int i = 0, n = 0;
+                int i = 0, n;
                 if (iter == 0)
+                {
                     n = 5;
+                }
                 else if (iter == 1)
+                {
                     n = 7;
-                else n = 15;
+                }
+                else
+                {
+                    n = 15;
+                }
 
                 foreach (var list in data)
                 {
 
-                    if (i >= n)
+                    if (i == n)
+                    {
                         break;
+                    }
+
                     while (rnd.Next(0, 2) == 1)
                     {
+
+                        if (i == n)
+                        {
+                            break;
+                        }
                         while (true)
                         {
                             var randomRep = list.list[rnd.Next(0, list.list.Count)];
