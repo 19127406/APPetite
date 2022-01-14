@@ -12,7 +12,8 @@
                    BackgroundColor="Transparent">
                 <ImageButton Source="chevron_left.png"
                              Clicked="GoBackPage"
-                             HorizontalOptions="Start"/>
+                             HorizontalOptions="Start"
+                             BackgroundColor="Transparent"/>
             </Frame>
 
             <Frame Grid.Row="1"
