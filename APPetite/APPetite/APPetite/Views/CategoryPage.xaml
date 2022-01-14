@@ -15,80 +15,209 @@
                        TextColor="{StaticResource Secondary}"/>
             </Frame>
 
-            <StackLayout>
-                <Button Text="salad"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="món chiên"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="món xào"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="món chay"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="món hầm"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="bánh ngọt"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="món nướng"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-                <Button Text="sinh tố"
-                        FontFamily="Montserrat-SemiBold"
-                        TextColor="#4a4a4a"
-                        CornerRadius="5"
-                        BackgroundColor="White"
-                        HorizontalOptions="Center"
-                        HeightRequest="50"
-                        WidthRequest="330"
-                        Margin="0,0,0,5"/>
-            </StackLayout>
+            <ScrollView Padding="0" Margin="0">
+                <StackLayout>
+                    <Button Text="bánh ngọt"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="chả"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="chè"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="gỏi"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="mì xào"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món ăn vặt"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món canh"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món chay"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món chiên"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món hải sản"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món hầm"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món hấp"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món kho"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món lẩu"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món nước"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="món nướng"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="rau xào"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="salad"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="sinh tố"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                    
+                    <Button Text="xôi"
+                            FontFamily="Montserrat-SemiBold"
+                            TextColor="#4a4a4a"
+                            CornerRadius="5"
+                            BackgroundColor="White"
+                            HorizontalOptions="Center"
+                            HeightRequest="50"
+                            WidthRequest="330"
+                            Margin="0,0,0,5"/>
+                </StackLayout>
+            </ScrollView>
 
         </StackLayout>
     </ContentPage.Content>
