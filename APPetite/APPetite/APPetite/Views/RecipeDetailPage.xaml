@@ -3,12 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPetite.Views.RecipeDetailPage"
              xmlns:vm="clr-namespace:APPetite.ViewModels"
-             xmlns:v="clr-namespace:APPetite.Views"
              BackgroundColor="{StaticResource BackgroundPrimary}"
              Shell.NavBarIsVisible="False">
-    <ContentPage.BindingContext>
-        <v:RecipeDetailPage/>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <Grid RowDefinitions="Auto,Auto">
@@ -17,7 +13,7 @@
                        Padding="0"
                        HeightRequest="192">
                     <Grid RowDefinitions="Auto">
-                        <Image Source="{Binding imagesource}"
+                        <Image x:Name="food_image" Source="{Binding }"
                                Aspect="AspectFill"/>
                         <ImageButton Source="chevron_left.png"
                                          BackgroundColor="Transparent"
@@ -53,7 +49,7 @@
                                HasShadow="False">
                         <Grid RowDefinitions="Auto,Auto,Auto"
                                   ColumnDefinitions="*,*,*">
-                            <Label Grid.Row="0" Grid.ColumnSpan="2"
+                            <Label x:Name="food_name" Grid.Row="0" Grid.ColumnSpan="2"
                                    Text="{Binding }"
                                    TextColor="{StaticResource Secondary}"
                                    FontSize="26"
@@ -63,7 +59,7 @@
                                    HorizontalTextAlignment="Center"
                                    Margin="25,0,0,0"/>
                             <Label Grid.Row="1" Grid.ColumnSpan="2"
-                                   Text="{Binding }"
+                                   Text=""
                                    FontFamily="Montserrat-SemiBold"
                                    TextColor="Black"
                                    HorizontalOptions="Start"
@@ -79,7 +75,7 @@
                                     <ImageButton Source="favorite.png"
                                                  BackgroundColor="Transparent"
                                                  WidthRequest="25"/>
-                                    <Label Text="{Binding}"
+                                    <Label x:Name="food_likes" Text="{Binding}"
                                            TextColor="Black"
                                            FontSize="14"
                                            VerticalTextAlignment="Center"
@@ -96,7 +92,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="schedule.png"
                                                WidthRequest="20"/>
-                                    <Label Text="{Binding}"
+                                    <Label x:Name="food_time" Text="{Binding}" 
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -110,7 +106,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="poll.png"
                                                WidthRequest="20"/>
-                                    <Label Text="{Binding}"
+                                    <Label x:Name="food_mode" Text="{Binding}"
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -124,7 +120,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="people.png"
                                                WidthRequest="20"/>
-                                    <Label Text="{Binding}"
+                                    <Label x:Name="food_people" Text="{Binding}"
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -142,7 +138,7 @@
                                Margin="0,25,0,3"/>
                     <Frame HasShadow="False"
                                Padding="0,15">
-                        <StackLayout BindableLayout.ItemsSource="{Binding }">
+                        <StackLayout x:Name="food_ingre" BindableLayout.ItemsSource="{Binding }">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Frame BackgroundColor="Transparent"
@@ -172,7 +168,7 @@
 
                     <Frame HasShadow="False"
                                Padding="0,15">
-                        <StackLayout BindableLayout.ItemsSource="{Binding }">
+                        <StackLayout x:Name="food_step"  BindableLayout.ItemsSource="{Binding }">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Frame BackgroundColor="Transparent"
@@ -182,7 +178,7 @@
                                             <Image Source="circle_fill.png"
                                                    WidthRequest="10"
                                                    Margin="20,0"/>
-                                            <Label Text="Ingredient"
+                                            <Label Text="{Binding }"
                                                    FontFamily="Montserrat-Light"
                                                    TextColor="Black"/>
                                         </StackLayout>

@@ -75,6 +75,7 @@ namespace APPetite.Views
         public RecipeDetailPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
         private async void GoBackPage(object sender, EventArgs e)
@@ -91,6 +92,18 @@ namespace APPetite.Views
                 FileImageSource fileImage = (FileImageSource)img_btn.Source;
                 img_btn.Source = fileImage.File == "favorite.png" ? "favorite_border.png" : "favorite.png";
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            food_image.BindingContext = imagesource;
+            food_ingre.BindingContext = ingredient;
+            food_likes.BindingContext = likes;
+            food_mode.BindingContext = difficulty;
+            food_name.BindingContext = name;
+            food_people.BindingContext = numberPerson;
+            food_step.BindingContext = step;
+            food_time.BindingContext = cookingTime;
         }
     }
 }
