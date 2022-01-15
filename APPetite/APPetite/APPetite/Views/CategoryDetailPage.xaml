@@ -15,7 +15,8 @@
                    Padding="15,10,0,10">
                     <ImageButton Source="chevron_left.png"
                                  BackgroundColor="Transparent"
-                                 HorizontalOptions="Start">
+                                 HorizontalOptions="Start"
+                                 Clicked="GoBackPage">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal">
@@ -47,13 +48,13 @@
                             <Label Text="Danh mục"
                                    HorizontalTextAlignment="Center"
                                    FontFamily="Montserrat-Medium"/>
-                            <Label Text="Món Hầm"
+                            <Label Text="{Binding typeRecipe}"
                                    HorizontalTextAlignment="Center"
                                    FontSize="26"
                                    FontFamily="Montserrat-SemiBold"
                                    TextColor="{StaticResource Secondary}"
                                    Margin="0,10"/>
-                            <Label Text="6 công thức"
+                            <Label Text="{Binding numberRecipe}"
                                    HorizontalTextAlignment="Center"
                                    FontFamily="Montserrat-Medium"/>
                         </StackLayout>

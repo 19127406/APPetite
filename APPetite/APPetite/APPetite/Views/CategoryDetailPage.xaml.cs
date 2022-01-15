@@ -31,7 +31,7 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync($"/{nameof(RecipeDetailPage)}");
         }
-        protected override void OnAppearing() 
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             categoryView.AddCategory();
