@@ -37,5 +37,16 @@ namespace APPetite.Views
             categoryView.AddCategory();
             BindingContext = categoryView;
         }
+
+        public void favoriteButtonClick(object sender, EventArgs e)
+        {
+            ImageButton img_btn = (ImageButton)sender;
+
+            if (img_btn.Source is FileImageSource)
+            {
+                FileImageSource fileImage = (FileImageSource)img_btn.Source;
+                img_btn.Source = fileImage.File == "favorite.png" ? "favorite_border.png" : "favorite.png";
+            }
+        }
     }
 }

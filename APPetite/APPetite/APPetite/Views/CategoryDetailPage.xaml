@@ -12,7 +12,7 @@
         <StackLayout>
             <Frame BackgroundColor="Transparent"
                    HasShadow="False"
-                   Padding="15,10,0,10">
+                   Padding="15,10,0,0">
                     <ImageButton Source="chevron_left.png"
                                  BackgroundColor="Transparent"
                                  HorizontalOptions="Start"
@@ -45,9 +45,6 @@
                            Padding="0"
                            HorizontalOptions="Center">
                         <StackLayout>
-                            <Label Text="Danh mục"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="Montserrat-Medium"/>
                             <Label Text="{Binding typeRecipe}"
                                    HorizontalTextAlignment="Center"
                                    FontSize="26"

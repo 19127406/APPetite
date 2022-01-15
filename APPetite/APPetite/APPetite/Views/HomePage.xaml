@@ -165,7 +165,7 @@
                                                    FontSize="10"
                                                    TextTransform="Uppercase"
                                                    FontFamily="Montserrat-Medium"/>
-                                                <Label Grid.Row="1" Grid.Column="0" 
+                                                <Label Grid.Row="1" Grid.Column="0"
                                                    Text="{Binding name}"
                                                    Padding="10,0"
                                                    FontSize="20"
@@ -176,8 +176,11 @@
                                                          HorizontalOptions="End"
                                                          Padding="10">
                                                     <ImageButton Source="favorite.png"
+                                                                 x:Name="favorite_btn"
+                                                                 Clicked="favoriteButtonClick"
                                                              BackgroundColor="Transparent"/>
                                                     <Label Text="{Binding likes}"
+                                                           x:Name="likes_number"
                                                        VerticalOptions="CenterAndExpand"
                                                        FontFamily="Montserrat-SemiBold"/>
                                                 </StackLayout>
