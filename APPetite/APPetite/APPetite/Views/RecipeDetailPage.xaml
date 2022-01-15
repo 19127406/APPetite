@@ -6,13 +6,13 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <Grid RowDefinitions="Auto,Auto">
                 <Frame BackgroundColor="Transparent"
                        HasShadow="False"
                        Padding="0"
                        HeightRequest="192">
                     <Grid RowDefinitions="Auto">
-                        <Image Source="istockphoto_1.png"
+                        <Image Source="{Binding }"
                                Aspect="AspectFill"/>
                         <ImageButton Source="chevron_left.png"
                                          BackgroundColor="Transparent"
@@ -42,14 +42,14 @@
                     </Grid>
                 </Frame>
 
-                <StackLayout>
+                <StackLayout Grid.Row="1">
                     <Frame BackgroundColor="Transparent"
                                Padding="0,20,0,5"
                                HasShadow="False">
                         <Grid RowDefinitions="Auto,Auto,Auto"
                                   ColumnDefinitions="*,*,*">
                             <Label Grid.Row="0" Grid.ColumnSpan="2"
-                                   Text="Something"
+                                   Text="{Binding }"
                                    TextColor="{StaticResource Secondary}"
                                    FontSize="26"
                                    FontFamily="Montserrat-Medium"
@@ -58,7 +58,7 @@
                                    HorizontalTextAlignment="Center"
                                    Margin="25,0,0,0"/>
                             <Label Grid.Row="1" Grid.ColumnSpan="2"
-                                   Text="by OK"
+                                   Text="{Binding }"
                                    FontFamily="Montserrat-SemiBold"
                                    TextColor="Black"
                                    HorizontalOptions="Start"
@@ -74,7 +74,7 @@
                                     <ImageButton Source="favorite.png"
                                                  BackgroundColor="Transparent"
                                                  WidthRequest="25"/>
-                                    <Label Text="100"
+                                    <Label Text="{Binding}"
                                            TextColor="Black"
                                            FontSize="14"
                                            VerticalTextAlignment="Center"
@@ -91,7 +91,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="schedule.png"
                                                WidthRequest="20"/>
-                                    <Label Text="10 phut"
+                                    <Label Text="{Binding}"
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -105,7 +105,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="poll.png"
                                                WidthRequest="20"/>
-                                    <Label Text="De"
+                                    <Label Text="{Binding}"
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -119,7 +119,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="people.png"
                                                WidthRequest="20"/>
-                                    <Label Text="2 nguoi"
+                                    <Label Text="{Binding}"
                                            FontFamily="Montserrat-SemiBold"
                                                VerticalTextAlignment="Center"/>
                                 </StackLayout>
@@ -137,71 +137,23 @@
                                Margin="0,25,0,3"/>
                     <Frame HasShadow="False"
                                Padding="0,15">
-                        <StackLayout>
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
+                        <StackLayout BindableLayout.ItemsSource="{Binding }">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="Transparent"
+                                           HasShadow="False"
+                                           Padding="0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="circle_fill.png"
+                                                   WidthRequest="10"
+                                                   Margin="20,0"/>
+                                            <Label Text="{Binding }"
+                                                   FontFamily="Montserrat-Light"
+                                                   TextColor="Black"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
                         </StackLayout>
                     </Frame>
 
@@ -215,76 +167,28 @@
 
                     <Frame HasShadow="False"
                                Padding="0,15">
-                        <StackLayout>
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent"
-                                       HasShadow="False"
-                                       Padding="0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="circle_fill.png"
-                                               WidthRequest="10"
-                                               Margin="20,0"/>
-                                    <Label Text="Ingredient"
-                                           FontFamily="Montserrat-Light"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </Frame>
+                        <StackLayout BindableLayout.ItemsSource="{Binding }">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="Transparent"
+                                           HasShadow="False"
+                                           Padding="0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="circle_fill.png"
+                                                   WidthRequest="10"
+                                                   Margin="20,0"/>
+                                            <Label Text="Ingredient"
+                                                   FontFamily="Montserrat-Light"
+                                                   TextColor="Black"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
                         </StackLayout>
                     </Frame>
 
                 </StackLayout>
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
