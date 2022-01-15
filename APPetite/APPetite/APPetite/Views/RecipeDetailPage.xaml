@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPetite.Views.RecipeDetailPage"
+             xmlns:vm="clr-namespace:APPetite.ViewModels"
+             xmlns:v="clr-namespace:APPetite.Views"
              BackgroundColor="{StaticResource BackgroundPrimary}"
              Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <v:RecipeDetailPage/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <Grid RowDefinitions="Auto,Auto">
@@ -12,7 +17,7 @@
                        Padding="0"
                        HeightRequest="192">
                     <Grid RowDefinitions="Auto">
-                        <Image Source="{Binding }"
+                        <Image Source="{Binding imagesource}"
                                Aspect="AspectFill"/>
                         <ImageButton Source="chevron_left.png"
                                          BackgroundColor="Transparent"

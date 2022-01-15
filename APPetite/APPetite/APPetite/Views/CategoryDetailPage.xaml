@@ -100,7 +100,7 @@
                                                        FontSize="10"
                                                        TextTransform="Uppercase"
                                                        FontFamily="Montserrat-Medium"/>
-                                                <Label Grid.Row="1" Grid.Column="0" 
+                                                <Label Grid.Row="1" Grid.Column="0" x:Name="recipe_name"
                                                        Text="{Binding name}"
                                                        Padding="10,0"
                                                        FontSize="20"
