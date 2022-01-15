@@ -22,7 +22,8 @@ namespace APPetite.Views
             Button btn = (Button)sender;
             var buttonName = btn.ClassId;
             var json = await FirebaseStorageHelper.Download_Json(buttonName);
-            await Shell.Current.GoToAsync($"{nameof(CategoryDetailPage)}?json={json}");
+            CategoryView.json = json;
+            await Shell.Current.GoToAsync($"/{nameof(CategoryDetailPage)}");
         }
     }
 }

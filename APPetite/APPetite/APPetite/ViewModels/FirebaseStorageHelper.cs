@@ -6,6 +6,7 @@ using Firebase.Storage;
 using Xamarin.Essentials;
 using FFImageLoading;
 using System.IO;
+using System.Net.Http;
 
 namespace APPetite.ViewModels
 {
@@ -84,20 +85,8 @@ namespace APPetite.ViewModels
                     .Child(fileName)
                     .GetDownloadUrlAsync();
 
-                var json = String.Empty;
-                using (var webClient = new WebClient())
-                {
-                    json = webClient.DownloadString(fileURL);
-                    //string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp.txt");
-                    //using (var fileStream = new FileStream(tempPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                    //{
-                    //    using (StreamWriter sw = new StreamWriter(fileStream))
-                    //    {
-                    //        fileStream.SetLength(0);
-                    //        sw.Write(json);
-                    //    }
-                    //}
-                }
+                var client = new HttpClient();
+                var json = await client.GetStringAsync(fileURL);
 
                 return json;
             }
