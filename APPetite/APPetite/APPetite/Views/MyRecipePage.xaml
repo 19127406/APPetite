@@ -7,7 +7,7 @@
              BackgroundColor="{StaticResource BackgroundPrimary}">
 
     <ContentPage.BindingContext>
-        <vm:RecipeView/>
+        <vm:MyRecipeView/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid RowDefinitions="Auto">
@@ -40,7 +40,7 @@
                        BackgroundColor="Transparent"
                        HasShadow="False"
                        Padding="10,0">
-                    <CollectionView ItemsSource="{Binding secondCollection}">
+                    <CollectionView ItemsSource="{Binding recipe}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
 
@@ -88,7 +88,7 @@
                                                                      Padding="10">
                                                         <ImageButton Source="favorite.png"
                                                                          BackgroundColor="Transparent"/>
-                                                        <Label Text="100"
+                                                        <Label Text="{Binding likes}"
                                                                    VerticalOptions="CenterAndExpand"
                                                                    FontFamily="Montserrat-SemiBold"/>
                                                     </StackLayout>

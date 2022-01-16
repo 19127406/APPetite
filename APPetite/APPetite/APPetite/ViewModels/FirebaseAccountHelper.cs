@@ -85,7 +85,7 @@ namespace APPetite.ViewModels
                     Email = email, 
                     Password = password,
                     BackupPass = "",
-                    RecipeJsonString = ""
+                    RecipeJsonString = "[]"
                 });
                 return true;
             }

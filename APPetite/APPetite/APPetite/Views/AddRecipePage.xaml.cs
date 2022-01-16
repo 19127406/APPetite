@@ -1,7 +1,9 @@
 ﻿using APPetite.Models;
+using APPetite.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -13,6 +15,7 @@ namespace APPetite.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddRecipePage : ContentPage
     {
+        public Recipe rep = new Recipe();
         public AddRecipePage()
         {
             InitializeComponent();
@@ -45,9 +48,9 @@ namespace APPetite.Views
             image_link.IsVisible = true;
         }
 
-        public void AddRecipe(object sender, EventArgs e)
+        public async void AddRecipe(object sender, EventArgs e)
         {
-            Recipe rep = new Recipe();
+            
             rep.cookingTime = recipe_time.Text;
             rep.difficulty = recipe_hard.Text;
             rep.imageSource = image_link.Text;
@@ -57,6 +60,8 @@ namespace APPetite.Views
             rep.step = recipe_step.Text.Split('+').ToList();
             rep.likes = 0;
 
+            var url = WebUtility.UrlEncode(Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(rep.imageSource)));
+            await Shell.Current.GoToAsync($"{nameof(MyRecipePage)}?name={rep.name}&ingredient={recipe_ingredient.Text}&step={recipe_step.Text}&imageSource={url}&numberPerson={rep.numberPerson}&cookingTime={rep.cookingTime}&difficulty={rep.difficulty}&likes={rep.likes}");
         }
 
         private void checkToEnable()

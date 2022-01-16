@@ -1,6 +1,6 @@
 ﻿using APPetite.ViewModels;
 using System;
-
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -43,6 +43,8 @@ namespace APPetite.Views
                     if (username == user.Username && (password == user.Password || password == user.BackupPass))
                     {
                         password_login.Text = "";
+                        string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CurrentAccount.txt");
+                        File.WriteAllText(fileName, username);
                         await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                     }
                     else
@@ -59,8 +61,8 @@ namespace APPetite.Views
                         if (username == user.Email && (password == user.Password || password == user.BackupPass))
                         {
                             password_login.Text = "";
-                            MyRecipeView.username = username;
-                            MyRecipeView.userRecipeJsonString = user.RecipeJsonString;
+                            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CurrentAccount.txt");
+                            File.WriteAllText(fileName, username);
                             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                         }
                         else
