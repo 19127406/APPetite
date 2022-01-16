@@ -23,15 +23,12 @@
                         <StackLayout Orientation="Horizontal"
                                      HorizontalOptions="Center"
                                      Margin="0,20,0,0">
-                            <Label Text="7 Công thức"
+                            <Label Text="{Binding recipe.Count}"
                                    FontFamily="Montserrat-Medium"
                                    TextColor="Gray"/>
-                            <Label Text="-"
+                            <Label Text="Công thức"
                                    FontFamily="Montserrat-Medium"
-                                   Margin="10,0,10,0"/>
-                            <Label Text="700 Yêu thích"
-                                   FontFamily="Montserrat-Medium"
-                                   TextColor="Gray"/>
+                                   Margin="0,0,10,0"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -50,6 +47,11 @@
                                            CornerRadius="5"
                                            IsClippedToBounds="True"
                                            HasShadow="False">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OpenRecipeDetail"
+                                                                  CommandParameter="{Binding .}"/>
+                                        </Frame.GestureRecognizers>
+                                        
                                         <StackLayout Padding="0">
                                             <Image Source="{Binding imageSource}"
                                                    WidthRequest="200"
