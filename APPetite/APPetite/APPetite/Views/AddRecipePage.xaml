@@ -53,7 +53,8 @@
                                             HeightRequest="45"
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
-                                            ClearButtonVisibility="WhileEditing"/>
+                                            ClearButtonVisibility="WhileEditing"
+                                              TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
@@ -67,7 +68,8 @@
                                                 FontSize="16"
                                                 FontFamily="Montserrat-Regular"
                                                 BackgroundColor="{StaticResource EntryColor}"
-                                                ClearButtonVisibility="WhileEditing"/>
+                                                ClearButtonVisibility="WhileEditing"
+                                                  TextChanged="entryTextChanged"/>
                             <Label Text="phút" Grid.Column="1"
                                    FontSize="16"
                                    FontFamily="Montserrat-Regular"
@@ -87,7 +89,8 @@
                                                 FontSize="16"
                                                 FontFamily="Montserrat-Regular"
                                                 BackgroundColor="{StaticResource EntryColor}"
-                                                ClearButtonVisibility="WhileEditing"/>
+                                                ClearButtonVisibility="WhileEditing"
+                                                  TextChanged="entryTextChanged"/>
                             <Label Text="dễ / vừa / khó" Grid.Column="1"
                                    FontSize="16"
                                    FontFamily="Montserrat-Regular"
@@ -107,7 +110,8 @@
                                                 FontSize="16"
                                                 FontFamily="Montserrat-Regular"
                                                 BackgroundColor="{StaticResource EntryColor}"
-                                                ClearButtonVisibility="WhileEditing"/>
+                                                ClearButtonVisibility="WhileEditing"
+                                                  TextChanged="entryTextChanged"/>
                             <Label Text="người" Grid.Column="1"
                                    FontSize="16"
                                    FontFamily="Montserrat-Regular"
@@ -157,7 +161,8 @@
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
                                             ClearButtonVisibility="WhileEditing"
-                                            IsVisible="False"/>
+                                            IsVisible="False"
+                                              TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
@@ -169,7 +174,8 @@
                                                FontFamily="Montserrat-Regular"
                                                FontSize="16"
                                                IsExpandable="True"
-                                               x:Name="recipe_ingredient"/>
+                                               x:Name="recipe_ingredient"
+                                               TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
@@ -181,14 +187,16 @@
                                                FontFamily="Montserrat-Regular"
                                                FontSize="16"
                                                IsExpandable="True"
-                                               x:Name="recipe_step"/>
+                                               x:Name="recipe_step"
+                                               TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
                            BackgroundColor="Transparent"
                            Padding="0,10"
                            Margin="0,25,0,0">
-                        <Button Text="thêm công thức"
+                        <Button x:Name="add_recipe_button" 
+                                Text="thêm công thức"
                                 HeightRequest="45"
                                 WidthRequest="250"
                                 HorizontalOptions="Center"

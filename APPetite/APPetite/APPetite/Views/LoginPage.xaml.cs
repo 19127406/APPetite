@@ -59,6 +59,8 @@ namespace APPetite.Views
                         if (username == user.Email && (password == user.Password || password == user.BackupPass))
                         {
                             password_login.Text = "";
+                            MyRecipeView.username = username;
+                            MyRecipeView.userRecipeJsonString = user.RecipeJsonString;
                             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                         }
                         else

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APPetite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,18 +25,18 @@ namespace APPetite.Views
 
         public async void ChooseImage(object sender, EventArgs e)
         {
-            var img = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
-            {
-                Title = "Hay chon hinh"
-            });
+            var img = await MediaPicker.PickPhotoAsync();
 
-            string imageName = img.FileName;
-            image_name.Text = imageName;
-            image_name.IsVisible = true;
-
-            if (image_link.IsVisible)
+            if (img != null)
             {
-                image_link.IsVisible = false;
+                string imageName = img.FileName;
+                image_name.Text = imageName;
+                image_name.IsVisible = true;
+
+                if (image_link.IsVisible)
+                {
+                    image_link.IsVisible = false;
+                }
             }
         }
 
@@ -46,7 +47,32 @@ namespace APPetite.Views
 
         public void AddRecipe(object sender, EventArgs e)
         {
+            Recipe rep = new Recipe();
+            rep.cookingTime = recipe_time.Text;
+            rep.difficulty = recipe_hard.Text;
+            rep.imageSource = image_link.Text;
+            rep.ingredient = recipe_ingredient.Text.Split('+').ToList();
+            rep.name = recipe_name.Text;
+            rep.numberPerson = recipe_number.Text;
+            rep.step = recipe_step.Text.Split('+').ToList();
+            rep.likes = 0;
 
+        }
+
+        private void checkToEnable()
+        {
+            add_recipe_button.IsEnabled = false;
+            if (!string.IsNullOrEmpty(recipe_hard.Text) && !string.IsNullOrEmpty(recipe_ingredient.Text) &&
+                !string.IsNullOrEmpty(recipe_name.Text) && !string.IsNullOrEmpty(recipe_number.Text) &&
+                !string.IsNullOrEmpty(recipe_step.Text) && !string.IsNullOrEmpty(recipe_time.Text))
+            {
+                add_recipe_button.IsEnabled = true;
+            }
+        }
+
+        void entryTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            checkToEnable();
         }
     }
 }
