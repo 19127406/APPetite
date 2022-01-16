@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.AddRecipePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Transparent"
+                       HasShadow="False"
+                       Padding="15,10,0,0">
+                <ImageButton Source="chevron_left.png"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="Start"
+                                 Clicked="GoBackPage">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                        Value="chevron_left.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                        Value="chevron_left_fill_round.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </Frame>
+
+            <Label Text="Thêm công thức cho bộ sưu tập của bạn"
+                       FontSize="22"
+                       FontFamily="Montserrat-Medium"
+                       TextColor="{StaticResource Primary}"
+                       HorizontalTextAlignment="Center"
+                       Margin="10,0"/>
+
+            <ScrollView Padding="0,20,0,10">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Tên món ăn" x:Name="recipe_name"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <Grid ColumnDefinitions="*,*">
+                            <controls:CustomEntry Placeholder="Thời gian làm" x:Name="recipe_time"
+                                                HeightRequest="45"
+                                                FontSize="16"
+                                                FontFamily="Montserrat-Regular"
+                                                BackgroundColor="{StaticResource EntryColor}"
+                                                ClearButtonVisibility="WhileEditing"/>
+                            <Label Text="phút" Grid.Column="1"
+                                   FontSize="16"
+                                   FontFamily="Montserrat-Regular"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <Grid ColumnDefinitions="*,*">
+                            <controls:CustomEntry Placeholder="Độ khó" x:Name="recipe_hard"
+                                                HeightRequest="45"
+                                                FontSize="16"
+                                                FontFamily="Montserrat-Regular"
+                                                BackgroundColor="{StaticResource EntryColor}"
+                                                ClearButtonVisibility="WhileEditing"/>
+                            <Label Text="dễ / vừa / khó" Grid.Column="1"
+                                   FontSize="16"
+                                   FontFamily="Montserrat-Regular"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <Grid ColumnDefinitions="*,*">
+                            <controls:CustomEntry Placeholder="Dành cho" x:Name="recipe_number"
+                                                HeightRequest="45"
+                                                FontSize="16"
+                                                FontFamily="Montserrat-Regular"
+                                                BackgroundColor="{StaticResource EntryColor}"
+                                                ClearButtonVisibility="WhileEditing"/>
+                            <Label Text="người" Grid.Column="1"
+                                   FontSize="16"
+                                   FontFamily="Montserrat-Regular"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="10,0"
+                           Margin="0,0,0,10">
+                        <Grid ColumnDefinitions="*,*">
+                            <Button Text="tải ảnh lên"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="{StaticResource Primary}"
+                                    BorderWidth=".5"
+                                    CornerRadius="10"
+                                    TextColor="{StaticResource Primary}"
+                                    FontFamily="Montserrat-Medium"
+                                    Clicked="ChooseImage"/>
+                            <Button Text="thêm đường dẫn"
+                                    Grid.Column="1"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="{StaticResource Primary}"
+                                    BorderWidth=".5"
+                                    CornerRadius="10"
+                                    TextColor="{StaticResource Primary}"
+                                    FontFamily="Montserrat-Medium"
+                                    Clicked="GetImage"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="image.png" x:Name="image_name"
+                           FontFamily="Montserrat-Medium"
+                           FontSize="16"
+                           HorizontalTextAlignment="Center"
+                           IsVisible="False"/>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Đường link đến ảnh" x:Name="image_link"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"
+                                            IsVisible="False"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEditor Placeholder="Nguyên liệu (Cách nhau bằng dấu +)"
+                                               FontFamily="Montserrat-Regular"
+                                               FontSize="16"
+                                               IsExpandable="True"
+                                               x:Name="recipe_ingredient"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEditor Placeholder="Các bước (Cách nhau bằng dấu +)"
+                                               FontFamily="Montserrat-Regular"
+                                               FontSize="16"
+                                               IsExpandable="True"
+                                               x:Name="recipe_step"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="0,10"
+                           Margin="0,25,0,0">
+                        <Button Text="thêm công thức"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"
+                                IsEnabled="False"
+                                Clicked="AddRecipe"/>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

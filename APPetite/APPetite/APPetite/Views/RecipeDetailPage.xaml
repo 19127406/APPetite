@@ -10,11 +10,11 @@
             <Grid RowDefinitions="Auto,Auto">
                 <Frame BackgroundColor="Transparent"
                        HasShadow="False"
-                       Padding="0"
-                       HeightRequest="192">
+                       Padding="0">
                     <Grid RowDefinitions="Auto">
                         <Image x:Name="food_image" Source="{Binding }"
-                               Aspect="AspectFill"/>
+                               Aspect="AspectFill"
+                               HeightRequest="192"/>
                         <ImageButton Source="chevron_left.png"
                                          BackgroundColor="Transparent"
                                          VerticalOptions="Start"
@@ -56,10 +56,9 @@
                                    FontFamily="Montserrat-Medium"
                                    HorizontalOptions="Start"
                                    VerticalTextAlignment="Center"
-                                   HorizontalTextAlignment="Center"
                                    Margin="25,0,0,0"/>
                             <Label Grid.Row="1" Grid.ColumnSpan="2"
-                                   Text=""
+                                   Text="by YoRHa"
                                    FontFamily="Montserrat-SemiBold"
                                    TextColor="Black"
                                    HorizontalOptions="Start"
@@ -143,7 +142,8 @@
                                 <DataTemplate>
                                     <Frame BackgroundColor="Transparent"
                                            HasShadow="False"
-                                           Padding="0">
+                                           Padding="0"
+                                           Margin="0,7">
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="circle_fill.png"
                                                    WidthRequest="10"
@@ -167,13 +167,15 @@
                                Margin="0,20,0,3"/>
 
                     <Frame HasShadow="False"
-                               Padding="0,15">
+                               Padding="0,15,0,0"
+                           Margin="0,0,0,20">
                         <StackLayout x:Name="food_step"  BindableLayout.ItemsSource="{Binding }">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Frame BackgroundColor="Transparent"
                                            HasShadow="False"
-                                           Padding="0">
+                                           Padding="0"
+                                           Margin="0,7">
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="circle_fill.png"
                                                    WidthRequest="10"

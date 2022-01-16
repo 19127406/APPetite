@@ -10,161 +10,148 @@
         <vm:RecipeView/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto,Auto">
-            <Frame BackgroundColor="Transparent"
-                   Margin="0,0,0,5">
-                <StackLayout>
-                    <Label Text="Các công thức của bạn"
-                           HorizontalOptions="Center"
-                           FontSize="23"
-                           FontFamily="Montserrat-SemiBold"
-                           TextColor="{StaticResource Secondary}"/>
-                    <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center"
-                                 Margin="0,20,0,0">
-                        <Label Text="7 Công thức"
-                               FontFamily="Montserrat-Medium"
-                               TextColor="Gray"/>
-                        <Label Text="-"
-                               FontFamily="Montserrat-Medium"
-                               Margin="10,0,10,0"/>
-                        <Label Text="700 Yêu thích"
-                               FontFamily="Montserrat-Medium"
-                               TextColor="Gray"/>
+        <Grid RowDefinitions="Auto">
+            <StackLayout>
+                <Frame BackgroundColor="Transparent"
+                       Margin="0,0,0,5">
+                    <StackLayout>
+                        <Label Text="Các công thức của bạn"
+                               HorizontalOptions="Center"
+                               FontSize="23"
+                               FontFamily="Montserrat-SemiBold"
+                               TextColor="{StaticResource Secondary}"/>
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center"
+                                     Margin="0,20,0,0">
+                            <Label Text="7 Công thức"
+                                   FontFamily="Montserrat-Medium"
+                                   TextColor="Gray"/>
+                            <Label Text="-"
+                                   FontFamily="Montserrat-Medium"
+                                   Margin="10,0,10,0"/>
+                            <Label Text="700 Yêu thích"
+                                   FontFamily="Montserrat-Medium"
+                                   TextColor="Gray"/>
+                        </StackLayout>
                     </StackLayout>
-                </StackLayout>
-            </Frame>
+                </Frame>
 
-            <!--<Frame BackgroundColor="Transparent"
-                   Margin="0,0,0,5">
-                <StackLayout>
-                    <Label Text="Các công thức của bạn"
-                           HorizontalOptions="Center"
-                           FontSize="23"
-                           FontFamily="Montserrat-SemiBold"
-                           TextColor="{StaticResource Secondary}"/>
-                    <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center"
-                                 Margin="0,20,0,0">
-                        <Label Text="{Binding }"
-                               FontFamily="Montserrat-Medium"
-                               TextColor="Gray"/>
-                        <Label Text="-"
-                               FontFamily="Montserrat-Medium"
-                               Margin="10,0,10,0"/>
-                        <Label Text="{Binding }"
-                               FontFamily="Montserrat-Medium"
-                               TextColor="Gray"/>
-                    </StackLayout>
-                </StackLayout>
-            </Frame>-->
+                <Frame Grid.Row="1"
+                       BackgroundColor="Transparent"
+                       HasShadow="False"
+                       Padding="10,0">
+                    <CollectionView ItemsSource="{Binding secondCollection}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
 
-            <Frame Grid.Row="1"
-                   BackgroundColor="Transparent"
-                   HasShadow="False"
-                   Padding="10,0">
-                <CollectionView ItemsSource="{Binding secondCollection}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                                <ContentView>
+                                    <Frame Margin="0,10"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           IsClippedToBounds="True"
+                                           HasShadow="False">
+                                        <StackLayout Padding="0">
+                                            <Image Source="{Binding imageSource}"
+                                                   WidthRequest="200"
+                                                   HeightRequest="130"
+                                                   Aspect="AspectFill"/>
+                                            <Frame HasShadow="False"
+                                                   Padding="10,2"
+                                                   Margin="0">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
 
-                            <ContentView>
-                                <Frame Margin="0,10"
-                                       Padding="0"
-                                       CornerRadius="5"
-                                       IsClippedToBounds="True"
-                                       HasShadow="False">
-                                    <StackLayout Padding="0">
-                                        <Image Source="{Binding imageSource}"
-                                               WidthRequest="200"
-                                               HeightRequest="130"
-                                               Aspect="AspectFill"/>
-                                        <Frame HasShadow="False"
-                                               Padding="10,2"
-                                               Margin="0">
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="Auto"/>
-                                                    <RowDefinition Height="Auto"/>
-                                                    <RowDefinition Height="Auto"/>
-                                                </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="2*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="2*"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <Label Grid.Row="0" Grid.Column="0" 
-                                                           Text="category"
-                                                           Padding="10,0"
-                                                           FontSize="10"
-                                                           TextTransform="Uppercase"
-                                                           FontFamily="Montserrat-Medium"/>
-                                                <Label Grid.Row="1" Grid.Column="0" 
-                                                           Text="{Binding name}"
-                                                           Padding="10,0"
-                                                           FontSize="20"
-                                                           FontFamily="Montserrat-SemiBold"
-                                                           TextColor="#4a4a4a"/>
-                                                <StackLayout Grid.Column="1" Grid.RowSpan="2" 
-                                                                 Orientation="Horizontal"
-                                                                 HorizontalOptions="End"
-                                                                 Padding="10">
-                                                    <ImageButton Source="favorite.png"
-                                                                     BackgroundColor="Transparent"/>
-                                                    <Label Text="100"
-                                                               VerticalOptions="CenterAndExpand"
-                                                               FontFamily="Montserrat-SemiBold"/>
-                                                </StackLayout>
-                                                <Grid Grid.Row="2" Grid.ColumnSpan="2" 
-                                                          ColumnDefinitions="*,*,*"
-                                                          Margin="0,6">
-                                                    <StackLayout Orientation="Horizontal"
-                                                                     Padding="5,0"
-                                                                     Margin="5,0"
-                                                                     HorizontalOptions="Start">
-                                                        <Image Source="schedule.png"
-                                                                   WidthRequest="20"/>
-                                                        <Label Text="{Binding cookingTime}" 
-                                                                   VerticalOptions="CenterAndExpand"
-                                                                   FontFamily="Montserrat-SemiBold"
-                                                                   FontSize="13"/>
-                                                    </StackLayout>
-                                                    <StackLayout Grid.Column="1" 
+                                                    <Label Grid.Row="0" Grid.Column="0" 
+                                                               Text="category"
+                                                               Padding="10,0"
+                                                               FontSize="10"
+                                                               TextTransform="Uppercase"
+                                                               FontFamily="Montserrat-Medium"/>
+                                                    <Label Grid.Row="1" Grid.Column="0" 
+                                                               Text="{Binding name}"
+                                                               Padding="10,0"
+                                                               FontSize="20"
+                                                               FontFamily="Montserrat-SemiBold"
+                                                               TextColor="#4a4a4a"/>
+                                                    <StackLayout Grid.Column="1" Grid.RowSpan="2" 
                                                                      Orientation="Horizontal"
-                                                                     Padding="5,0"
-                                                                     Margin="5,0"
-                                                                     HorizontalOptions="Center">
-                                                        <Image Source="poll.png"
-                                                                   WidthRequest="20"/>
-                                                        <Label Text="{Binding difficulty}"
+                                                                     HorizontalOptions="End"
+                                                                     Padding="10">
+                                                        <ImageButton Source="favorite.png"
+                                                                         BackgroundColor="Transparent"/>
+                                                        <Label Text="100"
                                                                    VerticalOptions="CenterAndExpand"
-                                                                   FontFamily="Montserrat-SemiBold"
-                                                                   FontSize="13"/>
+                                                                   FontFamily="Montserrat-SemiBold"/>
                                                     </StackLayout>
-                                                    <StackLayout Grid.Column="2" 
-                                                                     Orientation="Horizontal"
-                                                                     Padding="5,0"
-                                                                     Margin="5,0"
-                                                                     HorizontalOptions="End">
-                                                        <Image Source="people.png"
-                                                                   WidthRequest="20"/>
-                                                        <Label Text="{Binding numberPerson}"
-                                                                   VerticalOptions="CenterAndExpand"
-                                                                   FontFamily="Montserrat-SemiBold"
-                                                                   FontSize="13"/>
-                                                    </StackLayout>
+                                                    <Grid Grid.Row="2" Grid.ColumnSpan="2" 
+                                                              ColumnDefinitions="*,*,*"
+                                                              Margin="0,6">
+                                                        <StackLayout Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="Start">
+                                                            <Image Source="schedule.png"
+                                                                       WidthRequest="20"/>
+                                                            <Label Text="{Binding cookingTime}" 
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="1" 
+                                                                         Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="Center">
+                                                            <Image Source="poll.png"
+                                                                       WidthRequest="20"/>
+                                                            <Label Text="{Binding difficulty}"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="2" 
+                                                                         Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="End">
+                                                            <Image Source="people.png"
+                                                                       WidthRequest="20"/>
+                                                            <Label Text="{Binding numberPerson}"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                        </StackLayout>
+                                                    </Grid>
                                                 </Grid>
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
-                                </Frame>
-                            </ContentView>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Frame>
+                                </ContentView>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </StackLayout>
+
+            <Frame BackgroundColor="Transparent"
+                   HasShadow="False"
+                   Margin="0"
+                   VerticalOptions="End"
+                   HorizontalOptions="End">
+                <ImageButton Source="add.png"
+                             BackgroundColor="Transparent"
+                             Clicked="OpenAddrecipe"/>
             </Frame>
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>
