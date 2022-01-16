@@ -141,7 +141,7 @@ namespace APPetite.ViewModels
             var randomThing = generator.GenerateRandom();
 
             var user = await FirebaseAccountHelper.GetUserByEmail(emailAddress);
-            var result = await FirebaseAccountHelper.UpdateUser(user.Username, user.Email, user.Password, randomThing, user.RecipeJson);
+            var result = await FirebaseAccountHelper.UpdateUser(user.Username, user.Email, user.Password, randomThing, user.RecipeJsonString);
 
             string html = @"<!DOCTYPE html>
 <html>

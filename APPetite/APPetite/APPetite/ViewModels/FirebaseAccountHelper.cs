@@ -27,7 +27,7 @@ namespace APPetite.ViewModels
                     Password = item.Object.Password,
                     Email = item.Object.Email,
                     BackupPass = item.Object.BackupPass,
-                    RecipeJson = item.Object.RecipeJson
+                    RecipeJsonString = item.Object.RecipeJsonString
                 }).ToList();
                 return userlist;
             }
@@ -85,7 +85,7 @@ namespace APPetite.ViewModels
                     Email = email, 
                     Password = password,
                     BackupPass = "",
-                    RecipeJson = ""
+                    RecipeJsonString = ""
                 });
                 return true;
             }
@@ -112,7 +112,7 @@ namespace APPetite.ViewModels
                     Password = password, 
                     Email = email,
                     BackupPass = backupPass,
-                    RecipeJson = recipe
+                    RecipeJsonString = recipe
                 });
                 return true;
             }
