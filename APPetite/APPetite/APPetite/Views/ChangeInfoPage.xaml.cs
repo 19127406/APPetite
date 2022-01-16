@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -6,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace APPetite.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SearchPage : ContentPage
+    public partial class ChangeInfoPage : ContentPage
     {
-        public SearchPage()
+        public ChangeInfoPage()
         {
             InitializeComponent();
         }
@@ -16,16 +20,6 @@ namespace APPetite.Views
         private async void GoBackPage(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("..");
-        }
-
-        private void OpenRecipeDetail(object sender, EventArgs e)
-        {
-
-        }
-
-        public void SearchRecipe(object sender, EventArgs e)
-        {
-
         }
     }
 }

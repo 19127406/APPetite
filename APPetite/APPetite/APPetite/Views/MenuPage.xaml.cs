@@ -21,5 +21,10 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync($"/{nameof(AboutUsPage)}");
         }
+
+        private async void OpenChangeInfo(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"/{nameof(ChangeInfoPage)}");
+        }
     }
 }

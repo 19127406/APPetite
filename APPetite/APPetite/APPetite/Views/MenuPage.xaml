@@ -127,26 +127,27 @@
                        HasShadow="False"
                        Padding="20,5,20,0">
                     <StackLayout>
-                        <Label Text="Settings"
+                        <Label Text="Cài đặt"
                                   FontFamily="Montserrat-SemiBold"
                                   TextColor="{StaticResource Secondary}"
                                   Margin="10,0,0,5"
                                   FontSize="18"/>
                         <StackLayout>
-                            <Button Text="Account"
+                            <Button Text="Tài khoản"
+                                    FontFamily="Montserrat-SemiBold"
+                                    TextTransform="None"
+                                    BackgroundColor="White"
+                                    CornerRadius="5"
+                                    HeightRequest="45"
+                                    Padding="0,0,250,0"
+                                    Clicked="OpenChangeInfo"/>
+                            <Button Text="Ứng dụng"
                                     FontFamily="Montserrat-SemiBold"
                                     TextTransform="None"
                                     BackgroundColor="White"
                                     CornerRadius="5"
                                     HeightRequest="45"
                                     Padding="0,0,250,0"/>
-                            <Button Text="Application"
-                                    FontFamily="Montserrat-SemiBold"
-                                    TextTransform="None"
-                                    BackgroundColor="White"
-                                    CornerRadius="5"
-                                    HeightRequest="45"
-                                    Padding="0,0,230,0"/>
 
                         </StackLayout>
                     </StackLayout>

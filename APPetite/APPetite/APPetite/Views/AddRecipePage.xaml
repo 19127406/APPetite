@@ -37,7 +37,7 @@
 
             <Label Text="Thêm công thức cho bộ sưu tập của bạn"
                        FontSize="22"
-                       FontFamily="Montserrat-Medium"
+                       FontFamily="Montserrat-SemiBold"
                        TextColor="{StaticResource Primary}"
                        HorizontalTextAlignment="Center"
                        Margin="10,0"/>

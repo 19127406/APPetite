@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.ChangeInfoPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Transparent"
+                       HasShadow="False"
+                       Padding="15,10,0,10">
+                <ImageButton Source="chevron_left.png"
+                             Clicked="GoBackPage"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="Start">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                        Value="chevron_left.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Source"
+                                                        Value="chevron_left_fill_round.png"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </Frame>
+
+            <Label Text="Thay đổi thông tin"
+                       FontSize="22"
+                       FontFamily="Montserrat-SemiBold"
+                       TextColor="{StaticResource Primary}"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,20"/>
+
+            <ScrollView Padding="0,20,0,10">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Username"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Email"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Mật khẩu"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="25,0"
+                           Margin="0,0,0,10"
+                           CornerRadius="15">
+                        <controls:CustomEntry Placeholder="Nhập lại mật khẩu"
+                                            HeightRequest="45"
+                                            FontSize="16"
+                                            FontFamily="Montserrat-Regular"
+                                            ClearButtonVisibility="WhileEditing"/>
+                    </Frame>
+
+                    <Frame HasShadow="False"
+                           BackgroundColor="Transparent"
+                           Padding="0,10"
+                           Margin="0,25,0,0">
+                        <Button Text="Lưu thay đổi"
+                                HeightRequest="45"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                CornerRadius="100"
+                                FontFamily="Montserrat-Regular"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Primary}"/>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
