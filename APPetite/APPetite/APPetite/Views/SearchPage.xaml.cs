@@ -17,5 +17,10 @@ namespace APPetite.Views
         {
             await Shell.Current.GoToAsync("..");
         }
+
+        public void SearchRecipe(object sender, EventArgs e)
+        {
+
+        }
     }
 }

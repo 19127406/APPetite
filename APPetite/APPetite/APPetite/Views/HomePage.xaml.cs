@@ -66,5 +66,10 @@ namespace APPetite.Views
                 img_btn.Source = fileImage.File == "favorite.png" ? "favorite_border.png" : "favorite.png";
             }
         }
+
+        public async void OpenSearchPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"/{nameof(SearchPage)}");
+        }
     }
 }

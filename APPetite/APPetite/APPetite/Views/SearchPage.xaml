@@ -1,12 +1,173 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APPetite.Views.SearchPage">
+             xmlns:controls="clr-namespace:APPetite.ViewModels"
+             x:Class="APPetite.Views.SearchPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BackgroundPrimary}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid ColumnDefinitions="Auto,*">
+                <Frame BackgroundColor="Transparent"
+                       HasShadow="False"
+                       Padding="10,0,5,0">
+                    <ImageButton Source="chevron_left.png"
+                                 Clicked="GoBackPage"
+                                 HorizontalOptions="Start"
+                                 BackgroundColor="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Source"
+                                                        Value="chevron_left.png"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Source"
+                                                        Value="chevron_left_fill_round.png"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </Frame>
+
+                <Frame Grid.Column="1"
+                       HasShadow="False"
+                           BackgroundColor="{StaticResource EntryColor}"
+                           Padding="20,0"
+                           CornerRadius="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <controls:CustomEntry Placeholder="Tìm kiếm..."
+                                                  HeightRequest="45"
+                                                  FontSize="16"
+                                                  FontFamily="Montserrat-Regular"
+                                                  ClearButtonVisibility="WhileEditing"/>
+                        <ImageButton Grid.Column="1" 
+                                    Source="search.png"
+                                     BackgroundColor="Transparent"
+                                     HorizontalOptions="End"
+                                     VerticalOptions="Center"
+                                     WidthRequest="30"
+                                     Margin="0,5,0,0"
+                                     Clicked="SearchRecipe"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <Frame BackgroundColor="Transparent"
+                   HasShadow="False"
+                   Padding="10,0">
+                <CollectionView ItemsSource="{Binding recipe}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <ContentView>
+                                <Frame Margin="0,10"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           IsClippedToBounds="True"
+                                           HasShadow="False">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OpenRecipeDetail"
+                                                                  CommandParameter="{Binding .}"/>
+                                    </Frame.GestureRecognizers>
+
+                                    <StackLayout Padding="0">
+                                        <Image Source="{Binding imageSource}"
+                                                   WidthRequest="200"
+                                                   HeightRequest="130"
+                                                   Aspect="AspectFill"/>
+                                        <Frame HasShadow="False"
+                                                   Padding="10,2"
+                                                   Margin="0">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Row="0" Grid.Column="0" 
+                                                               Text="category"
+                                                               Padding="10,0"
+                                                               FontSize="10"
+                                                               TextTransform="Uppercase"
+                                                               FontFamily="Montserrat-Medium"/>
+                                                <Label Grid.Row="1" Grid.Column="0" 
+                                                               Text="{Binding name}"
+                                                               Padding="10,0"
+                                                               FontSize="20"
+                                                               FontFamily="Montserrat-SemiBold"
+                                                               TextColor="#4a4a4a"/>
+                                                <StackLayout Grid.Column="1" Grid.RowSpan="2" 
+                                                                     Orientation="Horizontal"
+                                                                     HorizontalOptions="End"
+                                                                     Padding="10">
+                                                    <ImageButton Source="favorite.png"
+                                                                         BackgroundColor="Transparent"/>
+                                                    <Label Text="{Binding likes}"
+                                                                   VerticalOptions="CenterAndExpand"
+                                                                   FontFamily="Montserrat-SemiBold"/>
+                                                </StackLayout>
+                                                <Grid Grid.Row="2" Grid.ColumnSpan="2" 
+                                                              ColumnDefinitions="*,*,*"
+                                                              Margin="0,6">
+                                                    <StackLayout Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="Start">
+                                                        <Image Source="schedule.png"
+                                                                       WidthRequest="20"/>
+                                                        <Label Text="{Binding cookingTime}" 
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="1" 
+                                                                         Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="Center">
+                                                        <Image Source="poll.png"
+                                                                       WidthRequest="20"/>
+                                                        <Label Text="{Binding difficulty}"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="2" 
+                                                                         Orientation="Horizontal"
+                                                                         Padding="5,0"
+                                                                         Margin="5,0"
+                                                                         HorizontalOptions="End">
+                                                        <Image Source="people.png"
+                                                                       WidthRequest="20"/>
+                                                        <Label Text="{Binding numberPerson}"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       FontFamily="Montserrat-SemiBold"
+                                                                       FontSize="13"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

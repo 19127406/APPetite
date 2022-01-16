@@ -33,7 +33,8 @@
                                  Source="search.png"
                                  BackgroundColor="Transparent"
                                  WidthRequest="25"
-                                 Margin="20,0"/>
+                                 Margin="20,0"
+                                 Clicked="OpenSearchPage"/>
                 </Grid>
             </Frame>
             <!--<RefreshView x:Name="refreshView" RefreshColor="{StaticResource Primary}" Refreshing="Refresh">-->
