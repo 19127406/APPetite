@@ -119,6 +119,10 @@ namespace APPetite.ViewModels
             if (subject == "Reset password")
             {
                 htmlString = await html_reset_password(emailAddress);
+                if (htmlString == null)
+                {
+                    return;
+                }
             }
             else
             {
@@ -141,6 +145,10 @@ namespace APPetite.ViewModels
             var randomThing = generator.GenerateRandom();
 
             var user = await FirebaseAccountHelper.GetUserByEmail(emailAddress);
+            if (user == null)
+            {
+                return null;
+            }
             var result = await FirebaseAccountHelper.UpdateUser(user.Username, user.Email, user.Password, randomThing, user.RecipeJsonString);
 
             string html = @"<!DOCTYPE html>
