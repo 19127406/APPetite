@@ -4,6 +4,7 @@
              x:Class="APPetite.Views.AboutUsPage"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Padding="10">
             <Image Source="yorha.png"
                    WidthRequest="170"
@@ -54,5 +55,6 @@
                    VerticalTextAlignment="Center"/>
 
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

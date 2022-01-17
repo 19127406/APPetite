@@ -85,12 +85,12 @@
                                        HorizontalOptions="End">
                                     <Grid RowDefinitions="*,*"
                                           Padding="0,15,0,0">
-                                        <Label Text="Nightcore - To be human"
+                                        <Label Text="Yoru ni Kakeru (夜に駆ける)"
                                                HorizontalOptions="EndAndExpand"
                                                FontFamily="Montserrat-SemiBold"
                                                TextColor="Black"/>
                                         <Label Grid.Row="1"
-                                               Text="Blake"
+                                               Text="YOASOBI"
                                                HorizontalOptions="EndAndExpand"
                                                FontFamily="Montserrat-Regular"
                                                TextColor="Black"/>
@@ -101,7 +101,7 @@
                                     <StackLayout Orientation="Horizontal"
                                                  Padding="0"
                                                  Margin="15,0">
-                                        <Label Text="1:30"
+                                        <Label Text="1:38"
                                                FontSize="12"
                                                FontFamily="Montserrat-Regular"
                                                TextColor="Black"/>
@@ -109,7 +109,7 @@
                                                FontSize="12"
                                                FontFamily="Montserrat-Light"
                                                TextColor="Black"/>
-                                        <Label Text="4:15"
+                                        <Label Text="4:21"
                                                FontSize="12"
                                                FontFamily="Montserrat-Regular"
                                                TextColor="Black"/>
