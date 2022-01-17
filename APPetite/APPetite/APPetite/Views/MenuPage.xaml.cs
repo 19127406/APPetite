@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,6 +26,13 @@ namespace APPetite.Views
         private async void OpenChangeInfo(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync($"/{nameof(ChangeInfoPage)}");
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CurrentAccount.txt");
+            var temp = File.ReadAllText(fileName);
+            username.BindingContext = temp;
         }
     }
 }

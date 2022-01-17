@@ -44,7 +44,7 @@
 
             <ScrollView Padding="0,20,0,10">
                 <StackLayout>
-                    <Frame HasShadow="False"
+                    <!--<Frame HasShadow="False"
                            BackgroundColor="{StaticResource EntryColor}"
                            Padding="25,0"
                            Margin="0,0,0,10"
@@ -54,14 +54,14 @@
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
                                             ClearButtonVisibility="WhileEditing"/>
-                    </Frame>
+                    </Frame>-->
 
                     <Frame HasShadow="False"
                            BackgroundColor="{StaticResource EntryColor}"
                            Padding="25,0"
                            Margin="0,0,0,10"
                            CornerRadius="15">
-                        <controls:CustomEntry Placeholder="Email"
+                        <controls:CustomEntry Placeholder="Email mới" x:Name="email_change"
                                             HeightRequest="45"
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
@@ -73,11 +73,13 @@
                            Padding="25,0"
                            Margin="0,0,0,10"
                            CornerRadius="15">
-                        <controls:CustomEntry Placeholder="Mật khẩu"
+                        <controls:CustomEntry Placeholder="Mật khẩu mới" x:Name="pass_change"
                                             HeightRequest="45"
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
-                                            ClearButtonVisibility="WhileEditing"/>
+                                            ClearButtonVisibility="WhileEditing"
+                                              IsPassword="True"
+                                              TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
@@ -85,24 +87,28 @@
                            Padding="25,0"
                            Margin="0,0,0,10"
                            CornerRadius="15">
-                        <controls:CustomEntry Placeholder="Nhập lại mật khẩu"
+                        <controls:CustomEntry Placeholder="Nhập lại mật khẩu mới" x:Name="confirm_pass_change"
                                             HeightRequest="45"
                                             FontSize="16"
                                             FontFamily="Montserrat-Regular"
-                                            ClearButtonVisibility="WhileEditing"/>
+                                            ClearButtonVisibility="WhileEditing"
+                                              IsPassword="True"
+                                              TextChanged="entryTextChanged"/>
                     </Frame>
 
                     <Frame HasShadow="False"
                            BackgroundColor="Transparent"
                            Padding="0,10"
                            Margin="0,25,0,0">
-                        <Button Text="Lưu thay đổi"
+                        <Button Text="Lưu thay đổi" x:Name="save_change"
                                 HeightRequest="45"
                                 WidthRequest="250"
                                 HorizontalOptions="Center"
                                 CornerRadius="100"
                                 FontFamily="Montserrat-Regular"
                                 TextColor="White"
+                                IsEnabled="False"
+                                Clicked="ChangeInfo"
                                 BackgroundColor="{StaticResource Primary}"/>
                     </Frame>
                 </StackLayout>

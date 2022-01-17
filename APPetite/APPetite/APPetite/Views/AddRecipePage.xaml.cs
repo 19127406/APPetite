@@ -2,6 +2,7 @@
 using APPetite.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -16,6 +17,7 @@ namespace APPetite.Views
     public partial class AddRecipePage : ContentPage
     {
         public Recipe rep = new Recipe();
+        string image_url = null;
         public AddRecipePage()
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace APPetite.Views
         public async void ChooseImage(object sender, EventArgs e)
         {
             var img = await MediaPicker.PickPhotoAsync();
+
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CurrentAccount.txt");
+            var temp = File.ReadAllText(fileName);
+
+            image_url = await FirebaseStorageHelper.Upload_File("Image_food/" + temp, img);
 
             if (img != null)
             {
@@ -53,7 +60,14 @@ namespace APPetite.Views
             
             rep.cookingTime = recipe_time.Text;
             rep.difficulty = recipe_hard.Text;
-            rep.imageSource = image_link.Text;
+            if (image_url == null)
+            {
+                rep.imageSource = image_link.Text;
+            }
+            else
+            {
+                rep.imageSource = image_url;
+            }
             rep.ingredient = recipe_ingredient.Text.Split('+').ToList();
             rep.name = recipe_name.Text;
             rep.numberPerson = recipe_number.Text;

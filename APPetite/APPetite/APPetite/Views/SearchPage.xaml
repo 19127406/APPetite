@@ -42,7 +42,7 @@
                            Padding="20,0"
                            CornerRadius="15">
                     <Grid ColumnDefinitions="*,Auto">
-                        <controls:CustomEntry Placeholder="Tìm kiếm..."
+                        <controls:CustomEntry Placeholder="Tìm kiếm..." x:Name="search_key"
                                                   HeightRequest="45"
                                                   FontSize="16"
                                                   FontFamily="Montserrat-Regular"

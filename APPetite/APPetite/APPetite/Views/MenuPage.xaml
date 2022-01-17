@@ -15,14 +15,14 @@
                         <Frame Padding="0"
                                CornerRadius="100"
                                IsClippedToBounds="True">
-                            <Image Source="account_circle_black.png" 
+                            <Image Source="https://image.pngaaa.com/830/680830-middle.png" 
                                    WidthRequest="75" 
                                    HeightRequest="75" 
                                    Aspect="AspectFill"/>
                         </Frame>
 
-                        <Label Grid.Column="1"
-                               Text="Adu dak wa"
+                        <Label Grid.Column="1" x:Name="username"
+                               Text="{Binding }"
                                HorizontalOptions="EndAndExpand"
                                VerticalOptions="Center"
                                FontFamily="Montserrat-Bold"

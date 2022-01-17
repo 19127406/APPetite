@@ -30,10 +30,5 @@ namespace APPetite.Models
             get;
             set;
         }
-        public List<Data> personalRescipeList
-        {
-            get => JsonConvert.DeserializeObject<List<Data>>(RecipeJsonString);
-            set => RecipeJsonString = JsonConvert.SerializeObject(value);
-        }
     }
 }
